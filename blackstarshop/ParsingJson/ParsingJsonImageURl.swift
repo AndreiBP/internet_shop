@@ -7,44 +7,20 @@
 
 import Foundation
 import Alamofire
-import AlamofireImage
 import UIKit
 
-    func parsingJsonImageUrl(image: String) -> (UIImage){
-        
-        var imageNow = UIImage()
 
-        AF.download(image).responseData { (response) in
-            if let data = response.value {
-                let imageData = UIImage(data: data)
-                imageNow = imageData ?? #imageLiteral(resourceName: "pirate-scaled-30x60-@2x.png")
-            }
-        }
-        
-        return imageNow
-    }
-        
-        
-//        AF.download(urlJson).responseData { (response) in
-//            switch response.result {
-//            case .success(_):
-//                let jsonData = try? response.result.get() as? [[String: Any]]?
-//                self.vegetablelist = jsonData?
+//func parsingJsonImageUrl2(image: String) -> (UIImage){
 //
-//            case .failure(_):
-//                print("errrrrrrrrrrrrrrrrr")
-//            }
-//       ---------------
-//AF.request(urlJson).responseImage { response in
-//    debugPrint(response)
+//    var imageNow = UIImage()
 //
-//    print(response.request)
-//    print(response.response)
-//    debugPrint(response.result)
-//
-//    if case .success(let image) = response.result {
-//        print("image downloaded: \(image)")
+//    AF.request(image, method: .get).response { response in
+//        switch response.result {
+//        case .success(let responseData):
+//            imageNow = UIImage(data: responseData!) ?? UIImage(named: "noImage")!
+//        case .failure(let error):
+//            print("error---",error)
+//        }
 //    }
+//    return imageNow
 //}
-//    }}
-

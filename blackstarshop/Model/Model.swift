@@ -7,102 +7,43 @@
 
 import Foundation
 import UIKit
-struct Class263: Decodable { //"Последний размер"
+
+struct Struct111 { 
 
     let name: String
     let sortOrder: String?
     let image: String?
-    let iconImage: String?
-    let iconImageActive: String?
-    //let subcategories: [subcategories]?
+    //let iconImage: String?
+    //let iconImageActive: String?
+    let subcategories: [Subcategories]?
+    
+    
+    init? (data: NSDictionary) {
+        name = data["name"] as? String ?? "nil"
+        sortOrder = data["sortOrder"] as? String ?? "nil"
+        //iconImage = data["iconImage"] as? String ?? .none
+        image = data["image"] as? String ?? .none
+        //iconImageActive = data["iconImageActive"] as? String ?? .none
+        subcategories = data["subcategories"] as? [Subcategories] ?? .none
+    }
+//}
+//    init? (data: NSDictionary) {
+//          guard let name = data["name"] as? String,
+//        let sortOrder = data["sortOrder"] as? String,
+//        let image = data["image"] as? String,
+//        let iconImage = data["iconImage"] as? String,
+//        let iconImageActive = data["iconImageActive"] as? String,
+//        let subcategories = data["subcategories"] as? [Subcategories] else {
+//            return nil
+//          }
+
+//        self.name = name
+//        self.sortOrder = Int(sortOrder) ?? 0
+//        self.image = image
+//        self.iconImage = iconImage
+//        self.iconImageActive = iconImageActive
+//        self.subcategories = subcategories
+//
+//    }
 }
 
-struct Class67: Decodable { //Аксессуары
-
-    let name: String
-    let sortOrder: String?
-    let image: String?
-    let iconImage: String?
-    let iconImageActive: String?
-    //let subcategories: [subcategories]?
-}
-
-struct Class68: Decodable { //Женская
-
-    let name: String
-    let sortOrder: String?
-    let image: String?
-    let iconImage: String?
-    let iconImageActive: String?
-   // let subcategories: [subcategories]?
-}
-
-struct Class69: Decodable { //Мужская
-
-    let name: String
-    let sortOrder: String?
-    let image: String?
-    let iconImage: String?
-    let iconImageActive: String?
-   // let subcategories: [subcategories]?
-}
-
-struct Class73: Decodable { //Детская
-
-    let name: String
-    let sortOrder: String?
-    let image: String?
-    let iconImage: String?
-    let iconImageActive: String?
-   // let subcategories: [subcategories]?
-}
-
-struct Class74: Decodable { //Коллекции
-
-    let name: String
-    let sortOrder: String?
-    let image: String?
-    let iconImage: String?
-    let iconImageActive: String?
-  //  let subcategories: [subcategories]?
-}
-
-struct Class156: Decodable { //Скидки
-
-    let name: String
-    let sortOrder: String?
-    let image: String?
-    let iconImage: String?
-    let iconImageActive: String?
-  //  let subcategories: [subcategories]?
-}
-
-struct Class165: Decodable { //Новинки
-
-    let name: String
-    let sortOrder: String?
-    let image: String?
-    let iconImage: String?
-    let iconImageActive: String?
-    //let subcategories: [subcategories]?
-}
-
-struct Class233: Decodable { //Marketplace
-
-    let name: String
-    let sortOrder: String?
-    let image: String?
-    let iconImage: String?
-    let iconImageActive: String?
-   // let subcategories: [subcategories]?
-}
-
-struct Class0: Decodable { //Предзаказ
-
-    let name: String
-    let sortOrder: Int?
-    let image: String?
-    let iconImage: String?
-    let iconImageActive: String?
-   // let subcategories: [subcategories]?
-}

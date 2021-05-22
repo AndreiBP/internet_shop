@@ -10,41 +10,38 @@ import Alamofire
 
 class MainTableTableViewController: UITableViewController {
     
-    var rootClass : [RootClass] = []
+    override func viewDidAppear(_ animated: Bool) {
+        let cornerRadius = cell1()
+         cornerRadius.cornerRadius()
+        self.tableView.reloadData()
+    }
+    var rootStruct : [Struct111] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         readAlamofireDataJson()
-        }
+    }
+    
     
     func readAlamofireDataJson() {
         
         let urlClientLoading = UrlClientloading()
         
         urlClientLoading.getJson { (jsonLoading) in
-            DispatchQueue.main.async { [self] in
+            DispatchQueue.main.async {
                 switch jsonLoading {
+                
                 case .success(let root):
-                self.rootClass = [root]
-                    //self.showData()
+                    self.rootStruct = root
                 case .failure:
-                   self.rootClass = []
-                    //self.showError()
-                }
-               self.tableView.reloadData() }
-        }
+                   self.rootStruct = []
+                            }
+                self.tableView.reloadData() }
+            }
     }
-    
-    
-    // MARK: - Table view data source
-
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 0
-//    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return rootClass.count
+        return rootStruct.count
     }
 
     
@@ -52,29 +49,38 @@ class MainTableTableViewController: UITableViewController {
      
         let cell = tableView.dequeueReusableCell(withIdentifier: "firstCell", for: indexPath) as! cell1
         
-        let model = rootClass[indexPath.row]
+        let model = rootStruct[indexPath.row]
         
-        cell.nameTextCategory.text = model.class263.name
+        cell.nameTextCategory.text = model.name
        
-        let imageIcon = model.class263.iconImage
+        let imageIcon1 = "http://blackstarshop.ru/"+(model.image!)
         
-        let image = parsingJsonImageUrl(image: imageIcon!)
+        //let url = URL(string: imageIcon1)
+       // let image = parsingJsonImageUrl2(image: imageIcon1)
+        //cell.iconImage.image = image
         
-        cell.iconImage.image = image
-        
+        AF.request(imageIcon1, method: .get).response { response in
+          switch response.result {
+           case .success(let responseData):
+            cell.iconImage.image = UIImage(data: responseData!, scale: 1) ?? UIImage(named: "noImage")
+           case .failure(let error):
+            print("error---",error)
+          }
+       }
         return cell
-        
-//        AF.request(imageIcon!).responseImage { (response) in
-//            if let image = try? response.result.get() {
-//                DispatchQueue.main.async {
-//                    cell.iconImage.image = image
-//                }
-//            }
-//        } .resume()
-//
-    
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: .main)
+        let secondTableVC = storyboard.instantiateViewController(identifier: "secondTVC") as! SecondTableViewController
+
+        let categori = rootStruct[indexPath.row]
+        secondTableVC.categori = categori.subcategories
+        
+        print(categori)
+        navigationController?.pushViewController(secondTableVC, animated: true)
+    }
+}
 
     /*
     // Override to support conditional editing of the table view.
@@ -120,5 +126,3 @@ class MainTableTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
-}
