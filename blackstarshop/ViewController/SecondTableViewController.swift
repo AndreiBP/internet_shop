@@ -27,20 +27,20 @@ class SecondTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "secondCell", for: indexPath) as! cellSecondTVC
+      let cell = tableView.dequeueReusableCell(withIdentifier: "secondCell", for: indexPath) as! cellSecondTVC
         
-        let model = categori?[indexPath.row]
-        
-        cell.nameLabel.text = model?.name
-        
+//        let model = categori?[indexPath.row]
+//
+//        cell.nameLabel.text = model?.name
+//
 //        let imageIcon1 = model?.iconImage ?? "nil"
-//         
+//
 //         let image = parsingJsonImageUrl(image: imageIcon1)
 //
 //        cell.iconImageActive.image = image
-        
+//
         return cell
-        
+//
     }
     
 

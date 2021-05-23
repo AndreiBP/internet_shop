@@ -6,44 +6,32 @@
 //
 
 import Foundation
-import UIKit
 
-struct Struct111 { 
-
+struct RootStruct {
+    
+   
     let name: String
     let sortOrder: String?
     let image: String?
     //let iconImage: String?
     //let iconImageActive: String?
-    let subcategories: [Subcategories]?
-    
-    
-    init? (data: NSDictionary) {
+    var subcategories: [Subcategories]?
+
+
+    init? (_ data: NSDictionary) {
         name = data["name"] as? String ?? "nil"
         sortOrder = data["sortOrder"] as? String ?? "nil"
         //iconImage = data["iconImage"] as? String ?? .none
         image = data["image"] as? String ?? .none
         //iconImageActive = data["iconImageActive"] as? String ?? .none
-        subcategories = data["subcategories"] as? [Subcategories] ?? .none
-    }
-//}
-//    init? (data: NSDictionary) {
-//          guard let name = data["name"] as? String,
-//        let sortOrder = data["sortOrder"] as? String,
-//        let image = data["image"] as? String,
-//        let iconImage = data["iconImage"] as? String,
-//        let iconImageActive = data["iconImageActive"] as? String,
-//        let subcategories = data["subcategories"] as? [Subcategories] else {
-//            return nil
-//          }
 
-//        self.name = name
-//        self.sortOrder = Int(sortOrder) ?? 0
-//        self.image = image
-//        self.iconImage = iconImage
-//        self.iconImageActive = iconImageActive
-//        self.subcategories = subcategories
-//
-//    }
-}
+        subcategories = [Subcategories]()
+        if let subcategoriesArray = data["subcategories"] as? [[String:Any]]{
+                    for value in subcategoriesArray{
+                        let val = Subcategories(data: value as NSDictionary)!
+                        subcategories?.append(val)
+                    }
+                }
+            }
+        }
 

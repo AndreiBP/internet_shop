@@ -3,7 +3,9 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -124,11 +126,58 @@
             </objects>
             <point key="canvasLocation" x="1384.0579710144928" y="-52.232142857142854"/>
         </scene>
+        <!--Collection View Controller-->
+        <scene sceneID="Emg-hk-4kr">
+            <objects>
+                <viewController id="ZnE-65-Q4Y" customClass="CollectionViewController" customModule="blackstarshop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hJ0-9g-JGy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="VqC-GH-lEe">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ys1-Da-eS6">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellColVC" id="0PY-Dy-N8d">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="bHo-Ln-W8v" customClass="CoolectionViewCell" customModule="blackstarshop" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="aem-Xg-s3j"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="VqC-GH-lEe" firstAttribute="leading" secondItem="aem-Xg-s3j" secondAttribute="leading" id="MZ9-a8-iN4"/>
+                            <constraint firstItem="aem-Xg-s3j" firstAttribute="trailing" secondItem="VqC-GH-lEe" secondAttribute="trailing" id="T5d-4p-ol9"/>
+                            <constraint firstItem="aem-Xg-s3j" firstAttribute="bottom" secondItem="VqC-GH-lEe" secondAttribute="bottom" id="fOY-Ve-Dy2"/>
+                            <constraint firstItem="VqC-GH-lEe" firstAttribute="top" secondItem="aem-Xg-s3j" secondAttribute="top" id="sJE-95-mn3"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="VqC-GH-lEe" id="NJ5-Gh-dFM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="agw-uu-Tbo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2226" y="-52"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="wTJ-jH-vN7">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mH8-CS-2XE" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Vb5-xe-o5Y"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="U6t-de-5r9">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -140,7 +189,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hER-BY-ZCB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-293" y="-52"/>
+            <point key="canvasLocation" x="-177" y="-52"/>
         </scene>
     </scenes>
     <resources>

@@ -6,16 +6,17 @@
 //
 import Foundation
 import UIKit
-import Alamofire
+//import Alamofire
 
 class MainTableTableViewController: UITableViewController {
     
-    override func viewDidAppear(_ animated: Bool) {
-        let cornerRadius = cell1()
-         cornerRadius.cornerRadius()
-        self.tableView.reloadData()
-    }
-    var rootStruct : [Struct111] = []
+//    override func viewWillAppear(_ animated: Bool) {
+//        let cornerRadius = cell1()
+//         cornerRadius.cornerRadius()
+//        self.tableView.reloadData()
+//    }
+    
+    var rootStruct : [RootStruct] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +37,9 @@ class MainTableTableViewController: UITableViewController {
                 case .failure:
                    self.rootStruct = []
                             }
-                self.tableView.reloadData() }
+                self.tableView.reloadData()
+                
+            }
             }
     }
 
@@ -56,29 +59,39 @@ class MainTableTableViewController: UITableViewController {
         let imageIcon1 = "http://blackstarshop.ru/"+(model.image!)
         
         //let url = URL(string: imageIcon1)
-       // let image = parsingJsonImageUrl2(image: imageIcon1)
-        //cell.iconImage.image = image
+       
+            let image2 = parsingJsonImageUrl(image: imageIcon1)
+            cell.iconImage.image = image2
         
-        AF.request(imageIcon1, method: .get).response { response in
-          switch response.result {
-           case .success(let responseData):
-            cell.iconImage.image = UIImage(data: responseData!, scale: 1) ?? UIImage(named: "noImage")
-           case .failure(let error):
-            print("error---",error)
-          }
-       }
+//        AF.request(imageIcon1, method: .get).response { response in
+//          switch response.result {
+//           case .success(let responseData):
+//            cell.iconImage.image = UIImage(data: responseData!, scale: 1) ?? UIImage(named: "noImage")
+//           case .failure(let error):
+//            print("error---",error)
+//          }
+//       }
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "Main", bundle: .main)
-        let secondTableVC = storyboard.instantiateViewController(identifier: "secondTVC") as! SecondTableViewController
-
-        let categori = rootStruct[indexPath.row]
-        secondTableVC.categori = categori.subcategories
         
+        let cell = tableView.dequeueReusableCell(withIdentifier: "firstCell", for: indexPath) as! cell1
+        
+       
+        let categori = rootStruct[indexPath.row]
+
+        cell.nameTextCategory.text = categori.name
         print(categori)
-        navigationController?.pushViewController(secondTableVC, animated: true)
+
+        
+//        let secondTableVC = storyboard.instantiateViewController(identifier: "secondTVC") as! SecondTableViewController
+//
+//        let categori = rootStruct[indexPath.row]
+//        secondTableVC.categori = categori.subcategories
+//
+//        print(categori)
+      //  navigationController?.pushViewController(secondTableVC, animated: true)
     }
 }
 
@@ -126,3 +139,4 @@ class MainTableTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+

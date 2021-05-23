@@ -12,22 +12,21 @@ enum UrlError: Error {
 }
 
 protocol UrlClient {
-    //func getJson(completion: @escaping ([Struct111]) -> Void)
-    func getJson(completion: @escaping (Result<[Struct111], Error>) -> Void)
+    func getJson(completion: @escaping (Result<[RootStruct], Error>) -> Void)
 }
 
 class UrlClientloading: UrlClient {
-    func getJson(completion: @escaping (Result<[Struct111], Error>) -> Void) {
+    func getJson(completion: @escaping (Result<[RootStruct], Error>) -> Void) {
         
         AF.request(urlJson).responseJSON { response in
             if let objects = response.value, let jsonCoder = objects as? NSDictionary {
-                var objects2: [Struct111] = []
+                var objects2: [RootStruct] = []
                 for (_, data) in jsonCoder where data is NSDictionary {
                     
                     // data присутствует
                     do {
             
-                    if let rootclass = Struct111(data: data as! NSDictionary) {
+                        if let rootclass = RootStruct(data as! NSDictionary) {
                         objects2.append(rootclass)
                         completion(.success(objects2))
                     }
@@ -46,37 +45,3 @@ class UrlClientloading: UrlClient {
     }
 }
 
-//protocol UrlClient2 {
-//    //func getJson(completion: @escaping ([Struct111]) -> Void)
-//    func getJson(completion: @escaping (Result<[Subcategories], Error>) -> Void)
-//}
-//
-//class UrlClientloading2: UrlClient2 {
-//    func getJson(completion: @escaping (Result<[Subcategories], Error>) -> Void) {
-//
-//        AF.request(urlJson).responseJSON { response in
-//            if let objects = response.value, let jsonCoder = objects as? NSDictionary {
-//                var objects2: [Subcategories] = []
-//                for (_, data) in jsonCoder where data is NSDictionary {
-//
-//                    // data присутствует
-//                    do {
-//
-//                    if let rootclass = Subcategories(data: data as! NSDictionary) {
-//                        objects2.append(rootclass)
-//                        completion(.success(objects2))
-//                    }
-//
-//                    } catch(let error) {
-//                        print(error)
-//                        completion(.failure(error))
-//                }
-//        }
-//
-//            } else {
-//                completion(.failure(UrlError.noData))
-//            return
-//                    }
-//            }
-//    }
-//}
