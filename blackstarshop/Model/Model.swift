@@ -5,6 +5,9 @@
 //  Created by Андрей Балобанов on 08.05.2021.
 //
 
+// главная структура при загрузке приложения
+
+
 import Foundation
 
 struct RootStruct {
@@ -16,7 +19,6 @@ struct RootStruct {
     //let iconImage: String?
     //let iconImageActive: String?
     var subcategories: [Subcategories]?
-
 
     init? (_ data: NSDictionary) {
         name = data["name"] as? String ?? "nil"
