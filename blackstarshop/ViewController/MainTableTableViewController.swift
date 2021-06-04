@@ -11,14 +11,23 @@ import UIKit
 
 class MainTableTableViewController: UITableViewController {
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-       
-    }
-    
     var rootStruct: [RootStruct] = []
     var subStruct: [Subcategories] = []
-    var indexL = IndexPath()
+   // var indexL = IndexPath()
+    var number = 0
+    
+   
+    @IBAction func refreshToMain(_ sender: Any) {
+        number = 0
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "mainTVC")
+        var viewcontrollers = self.navigationController!.viewControllers
+        viewcontrollers.removeLast()
+        viewcontrollers.append(vc)
+        self.navigationController?.setViewControllers(viewcontrollers, animated: true)
+    }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +41,7 @@ class MainTableTableViewController: UITableViewController {
         
         urlClientLoading.getJson { (jsonLoading) in
 
-           // DispatchQueue.main.async {
+//            DispatchQueue.main.async {
             switch jsonLoading {
                 
                 case .success(let root):
@@ -44,12 +53,16 @@ class MainTableTableViewController: UITableViewController {
             
                 self.tableView.reloadData()
               
-               // }
+          //      }
             }
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return rootStruct.count
+            if subStruct.count != 0 {
+            return subStruct.count
+            } else {
+            return rootStruct.count
+        }
     }
 
     
@@ -57,46 +70,80 @@ class MainTableTableViewController: UITableViewController {
      
         let cell = tableView.dequeueReusableCell(withIdentifier: "firstCell", for: indexPath) as! cell1
         
-        let model = rootStruct[indexPath.row]
-        
-        cell.nameTextCategory.text = model.name
+        if subStruct.count != 0 {
+            
+            let model = subStruct[indexPath.row]
+            
+                    cell.nameTextCategory.text = model.name
+            
+            let imageIcon1 = "http://blackstarshop.ru/"+(model.iconImage!)
+            
+                    if cell.iconImage != nil {
+                        parsingJsonImageUrl(imageIcon1, cell.iconImage) }
+                   return cell
+        } else {
+            
+            let model = rootStruct[indexPath.row]
+            
+                    cell.nameTextCategory.text = model.name
+            
+                    let imageIcon1 = "http://blackstarshop.ru/"+(model.image!)
+            
+                    if cell.iconImage != nil {
+                        parsingJsonImageUrl(imageIcon1, cell.iconImage) }
+            }
+            return cell
+            }
        
-        let imageIcon1 = "http://blackstarshop.ru/"+(model.image!)
-        
-        if cell.iconImage != nil {
-            parsingJsonImageUrl(imageIcon1, cell.iconImage) }
+//
+//        let model = rootStruct[indexPath.row]
+//
+//        cell.nameTextCategory.text = model.name
+//
+//        let imageIcon1 = "http://blackstarshop.ru/"+(model.image!)
+//
+//        if cell.iconImage != nil {
+//            parsingJsonImageUrl(imageIcon1, cell.iconImage) }
         
         //cell.iconImage.layer.cornerRadius = cell.iconImage.frame.size.width / 2
         
     
-        return cell
-    }
+        //return cell
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+   
+//        let secondTableVC = storyboard?.instantiateViewController(identifier: "secondTVC") as! SecondTableViewController
+//
+//        let categori = rootStruct[indexPath.row]
+//        secondTableVC.categori = categori.subcategories
+//
+        //navigationController?.pushViewController(secondTableVC, animated: true)
+       // let categori = rootStruct[indexPath.row].subcategories
+        //subStruct = categori!
+        
+        if number == 1 {
             
-//        guard let model = rootStruct[indexPath.row].subcategories else {
-//            print("-------------------")
-//            return
-//        }
-//            subStruct = model
-//
-//        let substruct = subStruct[indexPath.row]
-//
-//        indexL = indexPath
-//
-//
-//        tableView.indexPathsForVisibleRows?.forEach {_ in
-//            if let cell = tableView.cellForRow(at: indexL) as? cell1 {
-//                cell.nameTextCategory.text = substruct.name
-//               }
-//        }
-        
-        
-        let secondTableVC = storyboard?.instantiateViewController(identifier: "secondTVC") as! SecondTableViewController
+            let threeTableVC = storyboard?.instantiateViewController(identifier: "threeCVC") as! CollectionViewController
 
-        let categori = rootStruct[indexPath.row]
-        secondTableVC.categori = categori.subcategories
-
-        navigationController?.pushViewController(secondTableVC, animated: true)
+            let product = subStruct[indexPath.row].id!
+            
+            let urlP = urlJsonProduct + (product)
+            urlProduct = urlP
+            
+            print(urlProduct)
+            
+            threeTableVC.readAlamofireDataJsonProduct()
+            
+            navigationController?.pushViewController(threeTableVC, animated: true)
+            }
+        
+        if number == 0 {
+        
+        let categori = rootStruct[indexPath.row].subcategories
+        subStruct = categori!
+        tableView.reloadData()
+        number = 1
+            }
+        }
     }
-}
+

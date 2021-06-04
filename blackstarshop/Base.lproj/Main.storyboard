@@ -12,7 +12,7 @@
         <!--Main Table Table View Controller-->
         <scene sceneID="31e-ah-Hmz">
             <objects>
-                <tableViewController id="VWX-dB-6Zx" customClass="MainTableTableViewController" customModule="blackstarshop" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="mainTVC" id="VWX-dB-6Zx" customClass="MainTableTableViewController" customModule="blackstarshop" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Tks-wi-Lhd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -61,7 +61,14 @@
                             <outlet property="delegate" destination="VWX-dB-6Zx" id="K8f-Xt-tho"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="ik9-zC-gtu"/>
+                    <navigationItem key="navigationItem" id="ik9-zC-gtu">
+                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="ByI-Tb-MXF">
+                            <connections>
+                                <action selector="refreshToMain:" destination="VWX-dB-6Zx" id="CRm-Ph-z71"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="trash" id="uWK-BI-bCD"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jfs-FV-eIL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -124,7 +131,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K1M-1m-1QU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1384.0579710144928" y="-52.232142857142854"/>
+            <point key="canvasLocation" x="1106" y="-733"/>
         </scene>
         <!--Collection View Controller-->
         <scene sceneID="Emg-hk-4kr">
@@ -220,11 +227,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="agw-uu-Tbo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2224.6376811594205" y="-52.232142857142854"/>
+            <point key="canvasLocation" x="1483" y="-52"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wTJ-jH-vN7">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hER-BY-ZCB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mH8-CS-2XE" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Vb5-xe-o5Y"/>
@@ -237,7 +245,6 @@
                         <segue destination="VWX-dB-6Zx" kind="relationship" relationship="rootViewController" id="M2Y-Yk-ijy"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hER-BY-ZCB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-177" y="-52"/>
         </scene>
