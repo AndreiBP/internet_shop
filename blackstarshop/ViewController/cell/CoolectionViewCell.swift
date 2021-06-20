@@ -19,23 +19,15 @@ class CoolectionViewCell: UICollectionViewCell {
         didSet { //  присваивание
     
     titleName.text = menu?.name
-    price.text = menu?.price
-     
             
-            
-            
-    //let imageIcon1 = "http://blackstarshop.ru/"+(menu!.mainImage)
-    
-           
-        
-    // let image2 = parsingJsonImageUrl(image: imageIcon1)
-    //image.image = UIImage(data: image2)
-                
-                
-//    if let image = menu?.imageName {
-//    imageView.image = UIImage(named: image)
-//    }
-    }
+            if let myNumber = NumberFormatter().number(from: (menu?.price)!) {
+                let myInt = myNumber.intValue
+                price.text = String(myInt) }
+  
+let imageIcon1 = "http://blackstarshop.ru/"+(menu!.mainImage!)
+            if let _ = menu?.mainImage {
+                parsingJsonImageUrl(imageIcon1, image) }
+        }
     }
 }
 

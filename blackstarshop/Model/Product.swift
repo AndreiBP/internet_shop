@@ -11,13 +11,13 @@ import Foundation
 
 struct Product {
     
-    let name: String
-    let description: String
-    let colorName: String
-    let mainImage: String
-    var productImages: [ProductImages]
-    var offers: [Offers]
-    let price: String
+    let name: String?
+    let description: String?
+    let colorName: String?
+    let mainImage: String?
+    var productImages: [ProductImages]?
+    var offers: [Offers]?
+    let price: String?
     
     init? (_ data: NSDictionary) {
         name = data["name"] as? String ?? "nil"
@@ -29,14 +29,14 @@ struct Product {
         productImages = [ProductImages]()
         if let productImagesArray = data["productImages"] as? [[String:Any]]{
                     for value in productImagesArray {
-                        let val = ProductImages(data: value as NSDictionary)
-                        productImages.append(val!) }
+                        let val = ProductImages(data: value as NSDictionary)!
+                        productImages?.append(val) }
                         }
         offers = [Offers]()
         if let offersArray = data["offers"] as? [[String:Any]]{
                     for value in offersArray {
-                        let val = Offers(data: value as NSDictionary)
-                        offers.append(val!) }
+                        let val = Offers(data: value as NSDictionary)!
+                        offers?.append(val) }
                         }
     }
 }
@@ -52,9 +52,12 @@ struct ProductImages {
 }
 struct Offers {
     let size: String
+    let productOfferID: String
+    let quantity: String
     
     init? (data: NSDictionary) {
         size = data["size"] as? String ?? "nil"
-    
+        productOfferID = data["productOfferID"] as? String ?? "nil"
+        quantity = data["quantity"] as? String ?? "nil"
     }
 }

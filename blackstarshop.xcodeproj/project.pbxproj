@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7263472E267A62020053E685 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7263472D267A62020053E685 /* ProductViewController.swift */; };
+		72634750267DAE770053E685 /* PopTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7263474F267DAE770053E685 /* PopTableViewController.swift */; };
+		72634752267E2F6D0053E685 /* PopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72634751267E2F6D0053E685 /* PopTableViewCell.swift */; };
 		726642B5265953E000207EBF /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726642B4265953E000207EBF /* CollectionViewController.swift */; };
 		726642B72659543400207EBF /* CoolectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726642B62659543400207EBF /* CoolectionViewCell.swift */; };
 		726642B92663B0EF00207EBF /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726642B82663B0EF00207EBF /* Product.swift */; };
@@ -30,6 +33,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7263472D267A62020053E685 /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
+		7263474F267DAE770053E685 /* PopTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopTableViewController.swift; sourceTree = "<group>"; };
+		72634751267E2F6D0053E685 /* PopTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PopTableViewCell.swift; path = blackstarshop/ViewController/PopTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		726642B4265953E000207EBF /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		726642B62659543400207EBF /* CoolectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoolectionViewCell.swift; sourceTree = "<group>"; };
 		726642B82663B0EF00207EBF /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
@@ -124,6 +130,8 @@
 				72EDFB9F2645F3A7007ED56A /* MainTableTableViewController.swift */,
 				72786FCF26507B3000383C1E /* SecondTableViewController.swift */,
 				726642B4265953E000207EBF /* CollectionViewController.swift */,
+				7263472D267A62020053E685 /* ProductViewController.swift */,
+				7263474F267DAE770053E685 /* PopTableViewController.swift */,
 				72EDFBA5264718A4007ED56A /* cell */,
 			);
 			path = ViewController;
@@ -132,6 +140,7 @@
 		72EDFBA5264718A4007ED56A /* cell */ = {
 			isa = PBXGroup;
 			children = (
+				72634751267E2F6D0053E685 /* PopTableViewCell.swift */,
 				72EDFBA6264718CD007ED56A /* cell1.swift */,
 				72786FD126507B6D00383C1E /* cellSecondTVC.swift */,
 				726642B62659543400207EBF /* CoolectionViewCell.swift */,
@@ -220,9 +229,11 @@
 				726642B5265953E000207EBF /* CollectionViewController.swift in Sources */,
 				72EDFB8A2645F2D2007ED56A /* AppDelegate.swift in Sources */,
 				72EDFBA7264718CD007ED56A /* cell1.swift in Sources */,
+				72634752267E2F6D0053E685 /* PopTableViewCell.swift in Sources */,
 				72EDFBA42645FE41007ED56A /* ParsingJson.swift in Sources */,
 				72786FC7264904B200383C1E /* SubCategories.swift in Sources */,
 				726642BB2663B84000207EBF /* ParsingJsonProduct.swift in Sources */,
+				7263472E267A62020053E685 /* ProductViewController.swift in Sources */,
 				72786FCC2649194400383C1E /* UrlJson.swift in Sources */,
 				72EDFB8C2645F2D2007ED56A /* SceneDelegate.swift in Sources */,
 				726642B72659543400207EBF /* CoolectionViewCell.swift in Sources */,
@@ -230,6 +241,7 @@
 				72786FCE264C5FCE00383C1E /* ParsingJsonImageURl.swift in Sources */,
 				72786FD026507B3000383C1E /* SecondTableViewController.swift in Sources */,
 				72EDFBA22645F3CD007ED56A /* Model.swift in Sources */,
+				72634750267DAE770053E685 /* PopTableViewController.swift in Sources */,
 				72786FD226507B6D00383C1E /* cellSecondTVC.swift in Sources */,
 				726642B92663B0EF00207EBF /* Product.swift in Sources */,
 			);
