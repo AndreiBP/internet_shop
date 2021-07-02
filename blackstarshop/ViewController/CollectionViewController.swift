@@ -40,16 +40,16 @@ func readAlamofireDataJsonProduct() {
     }
 }
     }
-extension CollectionViewController: UICollectionViewDataSource, UICollectionViewDelegate {
-    
-    
-//     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        let flowayout = collectionViewLayout as? UICollectionViewFlowLayout
-//               let space: CGFloat = (flowayout?.minimumInteritemSpacing ?? 0.0) + (flowayout?.sectionInset.left ?? 0.0) + (flowayout?.sectionInset.right ?? 0.0)
-//               let size:CGFloat = (collectionView.frame.size.width - space) / 2.0
-//               return CGSize(width: size, height: size)
-//     }
-       
+
+extension CollectionViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+
+    // ячейки в 2 столбца на всех моделях iPhone
+     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let flowayout = collectionViewLayout as? UICollectionViewFlowLayout
+               let space: CGFloat = (flowayout?.minimumInteritemSpacing ?? 0.0) + (flowayout?.sectionInset.left ?? 0.0) + (flowayout?.sectionInset.right ?? 0.0)
+               let size: CGFloat = (collectionView.frame.size.width - space) / 2.0
+        return CGSize(width: size, height: size)
+     }
      
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return menuArray.count
@@ -65,22 +65,14 @@ extension CollectionViewController: UICollectionViewDataSource, UICollectionView
 }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let adress = menuArray[indexPath.row].productImages
-        let a = adress?[indexPath.row].imageURL
+        //let adress = menuArray[indexPath.row].productImages
+        //let a = adress?[indexPath.row].imageURL
        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 guard let productViewController = storyboard.instantiateViewController(identifier: "fourVC") as? ProductViewController else { return }
-        
-        productViewController.nameP = menuArray[indexPath.row].name ?? "NO"
-        productViewController.priceP = menuArray[indexPath.row].price ?? "NO"
-        productViewController.subTitleP = menuArray[indexPath.row].description ?? "NO"
-        
-        // Передача изображения
-        let imageIcon1 = "http://blackstarshop.ru/"+(a ?? "")
-                    if let _ = a {
-                        parsingJsonImageUrl(imageIcon1, productViewController.imageP)
-                        print(imageIcon1)
-                    }
+
+        productViewController.product = menuArray[indexPath.row]
+
                 show(productViewController, sender: nil)
             }
         }

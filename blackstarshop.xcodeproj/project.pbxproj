@@ -21,6 +21,8 @@
 		72786FCE264C5FCE00383C1E /* ParsingJsonImageURl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72786FCD264C5FCE00383C1E /* ParsingJsonImageURl.swift */; };
 		72786FD026507B3000383C1E /* SecondTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72786FCF26507B3000383C1E /* SecondTableViewController.swift */; };
 		72786FD226507B6D00383C1E /* cellSecondTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72786FD126507B6D00383C1E /* cellSecondTVC.swift */; };
+		72B7E49F26887905000F9C6E /* BasketTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B7E49E26887905000F9C6E /* BasketTableView.swift */; };
+		72B7E4A126887C36000F9C6E /* BasketTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B7E4A026887C36000F9C6E /* BasketTableViewCell.swift */; };
 		72EDFB8A2645F2D2007ED56A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EDFB892645F2D2007ED56A /* AppDelegate.swift */; };
 		72EDFB8C2645F2D2007ED56A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EDFB8B2645F2D2007ED56A /* SceneDelegate.swift */; };
 		72EDFB912645F2D2007ED56A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72EDFB8F2645F2D2007ED56A /* Main.storyboard */; };
@@ -45,6 +47,8 @@
 		72786FCD264C5FCE00383C1E /* ParsingJsonImageURl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParsingJsonImageURl.swift; sourceTree = "<group>"; };
 		72786FCF26507B3000383C1E /* SecondTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTableViewController.swift; sourceTree = "<group>"; };
 		72786FD126507B6D00383C1E /* cellSecondTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cellSecondTVC.swift; sourceTree = "<group>"; };
+		72B7E49E26887905000F9C6E /* BasketTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BasketTableView.swift; path = blackstarshop/BasketTableView.swift; sourceTree = SOURCE_ROOT; };
+		72B7E4A026887C36000F9C6E /* BasketTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketTableViewCell.swift; sourceTree = "<group>"; };
 		72EDFB862645F2D2007ED56A /* blackstarshop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = blackstarshop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72EDFB892645F2D2007ED56A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		72EDFB8B2645F2D2007ED56A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -132,6 +136,7 @@
 				726642B4265953E000207EBF /* CollectionViewController.swift */,
 				7263472D267A62020053E685 /* ProductViewController.swift */,
 				7263474F267DAE770053E685 /* PopTableViewController.swift */,
+				72B7E49E26887905000F9C6E /* BasketTableView.swift */,
 				72EDFBA5264718A4007ED56A /* cell */,
 			);
 			path = ViewController;
@@ -144,6 +149,7 @@
 				72EDFBA6264718CD007ED56A /* cell1.swift */,
 				72786FD126507B6D00383C1E /* cellSecondTVC.swift */,
 				726642B62659543400207EBF /* CoolectionViewCell.swift */,
+				72B7E4A026887C36000F9C6E /* BasketTableViewCell.swift */,
 			);
 			path = cell;
 			sourceTree = "<group>";
@@ -233,11 +239,13 @@
 				72EDFBA42645FE41007ED56A /* ParsingJson.swift in Sources */,
 				72786FC7264904B200383C1E /* SubCategories.swift in Sources */,
 				726642BB2663B84000207EBF /* ParsingJsonProduct.swift in Sources */,
+				72B7E49F26887905000F9C6E /* BasketTableView.swift in Sources */,
 				7263472E267A62020053E685 /* ProductViewController.swift in Sources */,
 				72786FCC2649194400383C1E /* UrlJson.swift in Sources */,
 				72EDFB8C2645F2D2007ED56A /* SceneDelegate.swift in Sources */,
 				726642B72659543400207EBF /* CoolectionViewCell.swift in Sources */,
 				72EDFBA02645F3A7007ED56A /* MainTableTableViewController.swift in Sources */,
+				72B7E4A126887C36000F9C6E /* BasketTableViewCell.swift in Sources */,
 				72786FCE264C5FCE00383C1E /* ParsingJsonImageURl.swift in Sources */,
 				72786FD026507B3000383C1E /* SecondTableViewController.swift in Sources */,
 				72EDFBA22645F3CD007ED56A /* Model.swift in Sources */,

@@ -10,42 +10,23 @@ import UIKit
 class PopTableViewController: UITableViewController {
    
     var infoProduct = [Offers]()
+    var ar = [Tovar]()
     
-    var quantityProduct = 0
-    var productID = 0
+    var descriptionProduct = ""
+    var priceProduct = ""
+//
+//    var quantityProduct = 0
+//    var productID = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-     //   tableView.isScrollEnabled = false //отключение скрол
-        readAlamofireDataJsonOffers()
     }
-    
-    //загрузка offers
-    func readAlamofireDataJsonOffers() {
-
-        let urlClientLoading = UrlClientloading3()
-
-        urlClientLoading.getJson3 { (jsonLoading) in
-
-            switch jsonLoading {
-
-                case .success(let root):
-                    self.infoProduct = root
-                case .failure:
-                    self.infoProduct = []
-            }
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
-    }
-        
     
     //расстояние между строк и ширина(таблицы) в таблице согласно содержимого ячеек
-    override func viewWillLayoutSubviews() {
+//    override func viewWillLayoutSubviews() {
        // preferredContentSize = CGSize(width: 500, height: tableView.contentSize.height)
        // preferredContentSize = CGSize(width: 500, height: tableView.contentSize.height)
-    }
+//    }
     
     
 //    override func numberOfSections(in tableView: UITableView) -> Int {
@@ -67,17 +48,41 @@ class PopTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-      
+        
+        
+       
+        let a = ProductViewController()
+        
         let cell = tableView.cellForRow(at: indexPath) as! PopTableViewCell
         
-        //установка галки выбора
+        //установка галки выбора и передача данных в корзину
         if  cell.selectionProduct.image == .none {
             cell.selectionProduct.image = UIImage(named: "galka")
+            
+            a.sizePR = infoProduct[indexPath.row].size
+            
+//            productViewController2.arrayProduct?[indexPath.row].sizeProduct = a.sizePR
+//            productViewController2.arrayProduct?[indexPath.row].priceProduct = priceProduct
+//            productViewController2.arrayProduct?[indexPath.row].titleProduct = descriptionProduct
+           
+            ar.append(Tovar.init(titleProduct: descriptionProduct, priceProduct: priceProduct, sizeProduct: a.sizePR, image: .none))
+            print(ar)
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    guard let productViewController2 = storyboard.instantiateViewController(identifier: "BasketViewController") as? BasketViewController else { return }
+            
+            productViewController2.arrayProduct?[indexPath.row] = ar[indexPath.row]
+            
+            
+          //  productViewController2.arrayProduct?[indexPath.row] = Tovar.init(titleProduct: descriptionProduct, priceProduct: priceProduct, sizeProduct: a.sizePR, image: .none)
+            
+            
             tableView.reloadData()
         }  else {
             cell.selectionProduct.image = .none
             tableView.reloadData()
         }
+        
         
         //учет количества товара
 //        if Int(infoProduct[indexPath.row].quantity) != 0 {
@@ -86,8 +91,9 @@ class PopTableViewController: UITableViewController {
 //        } else { print("товар отсутствует") }
         
         //выбранный продукт
-        productID = Int(infoProduct[indexPath.row].productOfferID) ?? 0
-        print(productID)
+//        productID = Int(infoProduct[indexPath.row].productOfferID) ?? 0
+//        print(productID)
+        
         
         self.tableView.reloadData()
     }

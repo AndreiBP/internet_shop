@@ -13,3 +13,6 @@ let urlJsonProduct = "http://blackstarshop.ru/index.php?route=api/v1/products&ca
 
 // сюда записывается полная ссылка по id обьяекту
 var urlProduct = ""
+
+var website = "http://blackstarshop.ru/"
+

@@ -15,32 +15,34 @@ class ProductViewController: UIViewController {
     @IBOutlet weak var imageProduct: UIImageView!
     
     @IBOutlet weak var buttonOutlet: UIButton!
-    @IBAction func addToСartButton(_ sender: Any) {
-        
-    }
     
-    var nameP = ""
-    var priceP = ""
-    var subTitleP = ""
-    var imageP = UIImageView()
+    @IBAction func addToСartButton(_ sender: Any) { }
     
-    var arrayImage = [String]()
+    
+    var product: Product?
+    
+    var imageP: ProductImages?
+    
+    var sizePR = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        nameProductLabel.text = nameP
+        nameProductLabel.text = product?.name
         
-//убираем лишние 0 из цены
-        if let myNumber = NumberFormatter().number(from: (priceP)) {
-            let myInt = myNumber.intValue
-            priceProductLabel.text = String(myInt) }
+        subTitleProductLabel.text = product?.description
         
-        subTitleProductLabel.text = subTitleP
+        let image = website + (product?.mainImage)!
         
-        imageProduct.image = imageP.image
+                if image != "" {
+                    parsingJsonImageUrl(image, imageProduct) }
         
         setupGestures()
+        
+//убираем лишние 0 из цены
+        if let myNumber = NumberFormatter().number(from: (product?.price)!) {
+            let myInt = myNumber.intValue
+            priceProductLabel.text = String(myInt) }
     }
 
     //создание реагирование на нажатие кнопки
@@ -53,7 +55,7 @@ class ProductViewController: UIViewController {
     //появление TableViewController
     @objc
     private func tapped() {
-        guard let popVC = storyboard?.instantiateViewController(identifier: "popVC") else { return }
+        guard let popVC = storyboard?.instantiateViewController(identifier: "popVC") as? PopTableViewController else { return }
         popVC.modalPresentationStyle = .popover
         let popOverVC = popVC.popoverPresentationController
         popOverVC?.delegate = self
@@ -63,8 +65,10 @@ class ProductViewController: UIViewController {
 //        popOverVC?.sourceView = self.buttonOutlet
 //        popOverVC?.sourceRect = CGRect(x: self.buttonOutlet.bounds.midX, y: self.buttonOutlet.bounds.maxY, width: 0, height: 0)
         popVC.preferredContentSize = CGSize(width: view.frame.width, height: view.frame.height / 5.2)
-       
-        
+
+        popVC.infoProduct = (product?.offers)!
+        popVC.descriptionProduct = product?.description ?? ""
+        popVC.priceProduct = product?.price ?? ""
         self.present(popVC, animated: false)
     }
 

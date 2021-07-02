@@ -40,31 +40,3 @@ class UrlClientloading2: UrlClientProduct {
         }
     }
 
-protocol UrlClientProduct3 {
-    func getJson3(completion: @escaping (Result<[Offers], Error>) -> Void)
-}
-
-class UrlClientloading3: UrlClientProduct3 {
-   
-    func getJson3(completion: @escaping (Result<[Offers], Error>) -> Void) {
-        
-        AF.request(urlProduct).responseJSON { response in
-            if let objects = response.value, let jsonCoder = objects as? NSDictionary {
-                
-                var objects3: [Offers] = []
-                for (_, data) in jsonCoder where data is NSDictionary {
-
-                    // data присутствует
-                    
-                    if let rootclass = Offers(data: data as! NSDictionary) {
-                        objects3.append(rootclass)
-                        completion(.success(objects3))
-                        }
-                }
-                    } else {
-                completion(.failure(UrlError.noData))
-            return
-                    }
-            }
-        }
-    }

@@ -7,7 +7,7 @@
 
 // структура выбранных объектов после нажатия подкатегорий
 
-import Foundation
+import UIKit
 
 struct Product {
     
@@ -61,3 +61,10 @@ struct Offers {
         quantity = data["quantity"] as? String ?? "nil"
     }
 }
+
+struct Tovar {
+    var titleProduct: String?
+    var priceProduct: String?
+    var sizeProduct: String?
+    var image: String?
+ }

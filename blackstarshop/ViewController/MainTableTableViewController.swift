@@ -26,8 +26,17 @@ class MainTableTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         readAlamofireDataJson()
+        setupNavigationBar()
     }
     
+    // поиск товаров
+    func setupNavigationBar() {
+        let searchControl = UISearchController(searchResultsController: nil)
+        navigationItem.searchController = searchControl
+        navigationItem.hidesSearchBarWhenScrolling = false
+    }
+    
+    //парсинг товаров в основную структуру
     func readAlamofireDataJson() {
         
         let urlClientLoading = UrlClientloading()
@@ -69,7 +78,7 @@ class MainTableTableViewController: UITableViewController {
             
                     cell.nameTextCategory.text = model.name
             
-            let imageIcon1 = "http://blackstarshop.ru/"+(model.iconImage!)
+            let imageIcon1 = website+(model.iconImage!)
             
                     if cell.iconImage != nil {
                         parsingJsonImageUrl(imageIcon1, cell.iconImage) }
@@ -80,7 +89,7 @@ class MainTableTableViewController: UITableViewController {
             
                     cell.nameTextCategory.text = model.name
             
-                    let imageIcon1 = "http://blackstarshop.ru/"+(model.image!)
+                    let imageIcon1 = website+(model.image!)
             
                     if cell.iconImage != nil {
                         parsingJsonImageUrl(imageIcon1, cell.iconImage) }
