@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		72294FEF2694F23900CE0055 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 72294FEE2694F23900CE0055 /* Realm */; };
+		72294FF12694F23900CE0055 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 72294FF02694F23900CE0055 /* RealmSwift */; };
+		72294FF32694F28D00CE0055 /* RealmBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72294FF22694F28D00CE0055 /* RealmBase.swift */; };
+		72294FF52694F3A200CE0055 /* FunctionRealmBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72294FF42694F3A200CE0055 /* FunctionRealmBase.swift */; };
 		7263472E267A62020053E685 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7263472D267A62020053E685 /* ProductViewController.swift */; };
 		72634750267DAE770053E685 /* PopTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7263474F267DAE770053E685 /* PopTableViewController.swift */; };
 		72634752267E2F6D0053E685 /* PopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72634751267E2F6D0053E685 /* PopTableViewCell.swift */; };
@@ -35,6 +39,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		72294FF22694F28D00CE0055 /* RealmBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmBase.swift; sourceTree = "<group>"; };
+		72294FF42694F3A200CE0055 /* FunctionRealmBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionRealmBase.swift; sourceTree = "<group>"; };
 		7263472D267A62020053E685 /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		7263474F267DAE770053E685 /* PopTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopTableViewController.swift; sourceTree = "<group>"; };
 		72634751267E2F6D0053E685 /* PopTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PopTableViewCell.swift; path = blackstarshop/ViewController/PopTableViewCell.swift; sourceTree = SOURCE_ROOT; };
@@ -67,6 +73,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72294FF12694F23900CE0055 /* RealmSwift in Frameworks */,
+				72294FEF2694F23900CE0055 /* Realm in Frameworks */,
 				72786FC22649002400383C1E /* Alamofire in Frameworks */,
 				72786FC52649005900383C1E /* AlamofireImage in Frameworks */,
 			);
@@ -124,6 +132,8 @@
 				72EDFBA12645F3CD007ED56A /* Model.swift */,
 				72786FC6264904B200383C1E /* SubCategories.swift */,
 				726642B82663B0EF00207EBF /* Product.swift */,
+				72294FF22694F28D00CE0055 /* RealmBase.swift */,
+				72294FF42694F3A200CE0055 /* FunctionRealmBase.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -173,6 +183,8 @@
 			packageProductDependencies = (
 				72786FC12649002400383C1E /* Alamofire */,
 				72786FC42649005900383C1E /* AlamofireImage */,
+				72294FEE2694F23900CE0055 /* Realm */,
+				72294FF02694F23900CE0055 /* RealmSwift */,
 			);
 			productName = blackstarshop;
 			productReference = 72EDFB862645F2D2007ED56A /* blackstarshop.app */;
@@ -204,6 +216,7 @@
 			packageReferences = (
 				72786FC02649002400383C1E /* XCRemoteSwiftPackageReference "Alamofire" */,
 				72786FC32649005900383C1E /* XCRemoteSwiftPackageReference "AlamofireImage" */,
+				72294FED2694F23900CE0055 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 			);
 			productRefGroup = 72EDFB872645F2D2007ED56A /* Products */;
 			projectDirPath = "";
@@ -234,6 +247,7 @@
 			files = (
 				726642B5265953E000207EBF /* CollectionViewController.swift in Sources */,
 				72EDFB8A2645F2D2007ED56A /* AppDelegate.swift in Sources */,
+				72294FF52694F3A200CE0055 /* FunctionRealmBase.swift in Sources */,
 				72EDFBA7264718CD007ED56A /* cell1.swift in Sources */,
 				72634752267E2F6D0053E685 /* PopTableViewCell.swift in Sources */,
 				72EDFBA42645FE41007ED56A /* ParsingJson.swift in Sources */,
@@ -241,6 +255,7 @@
 				726642BB2663B84000207EBF /* ParsingJsonProduct.swift in Sources */,
 				72B7E49F26887905000F9C6E /* BasketTableView.swift in Sources */,
 				7263472E267A62020053E685 /* ProductViewController.swift in Sources */,
+				72294FF32694F28D00CE0055 /* RealmBase.swift in Sources */,
 				72786FCC2649194400383C1E /* UrlJson.swift in Sources */,
 				72EDFB8C2645F2D2007ED56A /* SceneDelegate.swift in Sources */,
 				726642B72659543400207EBF /* CoolectionViewCell.swift in Sources */,
@@ -457,6 +472,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		72294FED2694F23900CE0055 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.9.0;
+			};
+		};
 		72786FC02649002400383C1E /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -476,6 +499,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		72294FEE2694F23900CE0055 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 72294FED2694F23900CE0055 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+		72294FF02694F23900CE0055 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 72294FED2694F23900CE0055 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
 		72786FC12649002400383C1E /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 72786FC02649002400383C1E /* XCRemoteSwiftPackageReference "Alamofire" */;

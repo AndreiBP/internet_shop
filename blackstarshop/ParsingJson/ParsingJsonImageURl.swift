@@ -35,13 +35,16 @@ func parsingJsonImageUrl(_ image: String, _ imageView: UIImageView)  {
     let noImage = UIImage(named: "noImage")
     
     AF.request(image, method: .get).response { response in
-        guard let image = UIImage(data:response.data!) else {
+        if response.data != nil {
+        guard let image = UIImage(data:(response.data!)) else {
             imageView.image = noImage
                             return }
         DispatchQueue.main.async {
         let imageData = image.jpegData(compressionQuality: 1.0)
             imageView.image = UIImage(data : imageData!)
-        }
+//            imageView.layer.cornerRadius = 25
+//            imageView.clipsToBounds = true
+        }}
     }
 }
 

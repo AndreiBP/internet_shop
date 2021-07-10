@@ -24,6 +24,7 @@ class ProductViewController: UIViewController {
     var imageP: ProductImages?
     
     var sizePR = ""
+     var imagePR = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +34,7 @@ class ProductViewController: UIViewController {
         subTitleProductLabel.text = product?.description
         
         let image = website + (product?.mainImage)!
-        
+        imagePR = image
                 if image != "" {
                     parsingJsonImageUrl(image, imageProduct) }
         
@@ -67,8 +68,9 @@ class ProductViewController: UIViewController {
         popVC.preferredContentSize = CGSize(width: view.frame.width, height: view.frame.height / 5.2)
 
         popVC.infoProduct = (product?.offers)!
-        popVC.descriptionProduct = product?.description ?? ""
+        popVC.nameProduct = product?.name ?? ""
         popVC.priceProduct = product?.price ?? ""
+        popVC.imageProduct = imagePR
         self.present(popVC, animated: false)
     }
 

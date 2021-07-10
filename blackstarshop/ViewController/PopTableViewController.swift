@@ -10,13 +10,10 @@ import UIKit
 class PopTableViewController: UITableViewController {
    
     var infoProduct = [Offers]()
-    var ar = [Tovar]()
     
-    var descriptionProduct = ""
+    var nameProduct = ""
     var priceProduct = ""
-//
-//    var quantityProduct = 0
-//    var productID = 0
+    var imageProduct = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,8 +46,6 @@ class PopTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        
-       
         let a = ProductViewController()
         
         let cell = tableView.cellForRow(at: indexPath) as! PopTableViewCell
@@ -61,39 +56,16 @@ class PopTableViewController: UITableViewController {
             
             a.sizePR = infoProduct[indexPath.row].size
             
-//            productViewController2.arrayProduct?[indexPath.row].sizeProduct = a.sizePR
-//            productViewController2.arrayProduct?[indexPath.row].priceProduct = priceProduct
-//            productViewController2.arrayProduct?[indexPath.row].titleProduct = descriptionProduct
-           
-            ar.append(Tovar.init(titleProduct: descriptionProduct, priceProduct: priceProduct, sizeProduct: a.sizePR, image: .none))
-            print(ar)
-            
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    guard let productViewController2 = storyboard.instantiateViewController(identifier: "BasketViewController") as? BasketViewController else { return }
-            
-            productViewController2.arrayProduct?[indexPath.row] = ar[indexPath.row]
-            
-            
-          //  productViewController2.arrayProduct?[indexPath.row] = Tovar.init(titleProduct: descriptionProduct, priceProduct: priceProduct, sizeProduct: a.sizePR, image: .none)
-            
+            // запись выбранного товара в базу Realm
+            let funcRealmBase = FunctionRealmBase.functionRealmBase
+           funcRealmBase.saveTovarRealmBase(titleProduct: nameProduct, priceProduct: priceProduct, sizeProduct: a.sizePR, iconString: imageProduct)           
             
             tableView.reloadData()
+            
         }  else {
             cell.selectionProduct.image = .none
             tableView.reloadData()
         }
-        
-        
-        //учет количества товара
-//        if Int(infoProduct[indexPath.row].quantity) != 0 {
-//        quantityProduct -= 1
-//        print(quantityProduct)
-//        } else { print("товар отсутствует") }
-        
-        //выбранный продукт
-//        productID = Int(infoProduct[indexPath.row].productOfferID) ?? 0
-//        print(productID)
-        
         
         self.tableView.reloadData()
     }

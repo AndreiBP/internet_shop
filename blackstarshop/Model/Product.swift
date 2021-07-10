@@ -62,9 +62,3 @@ struct Offers {
     }
 }
 
-struct Tovar {
-    var titleProduct: String?
-    var priceProduct: String?
-    var sizeProduct: String?
-    var image: String?
- }
