@@ -10,6 +10,10 @@ import UIKit
 class cell1: UITableViewCell {
 
 @IBOutlet weak var nameTextCategory: UILabel!
-@IBOutlet weak var iconImage: UIImageView!
+    @IBOutlet weak var iconImage: UIImageView! {
+        didSet {
+            iconImage.layer.cornerRadius = iconImage.bounds.height / 2
+        }
+    }
     
 }

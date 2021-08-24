@@ -11,7 +11,7 @@ let urlJsonCategories = "http://blackstarshop.ru/index.php?route=api/v1/categori
 
 let urlJsonProduct = "http://blackstarshop.ru/index.php?route=api/v1/products&cat_id="
 
-// сюда записывается полная ссылка по id обьяекту
+// сюда записывается полная ссылка по id объекту
 var urlProduct = ""
 
 var website = "http://blackstarshop.ru/"

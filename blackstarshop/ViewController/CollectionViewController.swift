@@ -17,46 +17,46 @@ class CollectionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.dataSource = self
-        collectionView.delegate = self
+            collectionView.dataSource = self
+            collectionView.delegate = self
     }
    
 func readAlamofireDataJsonProduct() {
     
     let urlClientLoading = UrlClientloading2()
     
-    urlClientLoading.getJson2 { (jsonLoading) in
+        urlClientLoading.getJson2 { (jsonLoading) in
 
-        switch jsonLoading {
+            switch jsonLoading {
             
             case .success(let root):
                 self.menuArray = root
             case .failure:
                 self.menuArray = []
         }
-        DispatchQueue.main.async {
+    DispatchQueue.main.async {
             self.collectionView?.reloadData()
+            }
         }
     }
 }
-    }
 
 extension CollectionViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
     // ячейки в 2 столбца на всех моделях iPhone
      func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let flowayout = collectionViewLayout as? UICollectionViewFlowLayout
+            let flowayout = collectionViewLayout as? UICollectionViewFlowLayout
                let space: CGFloat = (flowayout?.minimumInteritemSpacing ?? 0.0) + (flowayout?.sectionInset.left ?? 0.0) + (flowayout?.sectionInset.right ?? 0.0)
                let size: CGFloat = (collectionView.frame.size.width - space) / 2.0
-        return CGSize(width: size, height: size)
-     }
+    return CGSize(width: size, height: size)
+}
      
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return menuArray.count
-    }
+}
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let itemCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellColVC", for: indexPath) as? CoolectionViewCell {
+            if let itemCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellColVC", for: indexPath) as? CoolectionViewCell {
 
             itemCell.menu = menuArray[indexPath.row]
             return itemCell
@@ -64,15 +64,12 @@ extension CollectionViewController: UICollectionViewDataSource, UICollectionView
     return UICollectionViewCell()
 }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        //let adress = menuArray[indexPath.row].productImages
-        //let a = adress?[indexPath.row].imageURL
-       
+    
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 guard let productViewController = storyboard.instantiateViewController(identifier: "fourVC") as? ProductViewController else { return }
 
         productViewController.product = menuArray[indexPath.row]
 
-                show(productViewController, sender: nil)
+        show(productViewController, sender: nil)
             }
-        }
+}

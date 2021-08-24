@@ -30,13 +30,10 @@ class SecondTableViewController: UITableViewController {
 
         cell.nameLabel.text = model?.name
         
-        let imageIcon1 = "http://blackstarshop.ru/"+((model?.iconImage)!)
+        let imageIcon1 = "http://blackstarshop.ru/"+((model?.iconImage) ?? "")
         
         if cell.iconImageActive != nil {
             parsingJsonImageUrl(imageIcon1, cell.iconImageActive) }
-        
-//        if cell.iconImageActive != nil {
-//            loadImage(cell.iconImageActive, imageIcon1) }
         
         return cell
     }
@@ -45,7 +42,7 @@ class SecondTableViewController: UITableViewController {
         
         let threeTableVC = storyboard?.instantiateViewController(identifier: "threeCVC") as! CollectionViewController
 
-        let product = categori![indexPath.row].id!
+        let product = categori![indexPath.row].id ?? ""
         
         let urlP = urlJsonProduct + (product)
         urlProduct = urlP
@@ -53,7 +50,6 @@ class SecondTableViewController: UITableViewController {
         print(urlProduct)
         
         navigationController?.pushViewController(threeTableVC, animated: true)
-        //threeTableVC.viewDidLoad()
 
     }
 }
