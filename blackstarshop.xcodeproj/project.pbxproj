@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		722609CF26DA9A8900448579 /* MainTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722609CE26DA9A8900448579 /* MainTVC.swift */; };
+		722609D226DA9BCA00448579 /* MainTVCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722609D126DA9BCA00448579 /* MainTVCCell.swift */; };
+		722609D426DAC45C00448579 /* TwoTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722609D326DAC45C00448579 /* TwoTVC.swift */; };
+		722609D626DAC47E00448579 /* TwoTVCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722609D526DAC47E00448579 /* TwoTVCCell.swift */; };
 		72294FEF2694F23900CE0055 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 72294FEE2694F23900CE0055 /* Realm */; };
 		72294FF12694F23900CE0055 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 72294FF02694F23900CE0055 /* RealmSwift */; };
 		72294FF32694F28D00CE0055 /* RealmBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72294FF22694F28D00CE0055 /* RealmBase.swift */; };
@@ -38,6 +42,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		722609CE26DA9A8900448579 /* MainTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTVC.swift; sourceTree = "<group>"; };
+		722609D126DA9BCA00448579 /* MainTVCCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTVCCell.swift; sourceTree = "<group>"; };
+		722609D326DAC45C00448579 /* TwoTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoTVC.swift; sourceTree = "<group>"; };
+		722609D526DAC47E00448579 /* TwoTVCCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoTVCCell.swift; sourceTree = "<group>"; };
 		72294FF22694F28D00CE0055 /* RealmBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmBase.swift; sourceTree = "<group>"; };
 		72294FF42694F3A200CE0055 /* FunctionRealmBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionRealmBase.swift; sourceTree = "<group>"; };
 		7263472D267A62020053E685 /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +89,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		722609CD26DA9A4B00448579 /* VC2 */ = {
+			isa = PBXGroup;
+			children = (
+				722609CE26DA9A8900448579 /* MainTVC.swift */,
+				722609D326DAC45C00448579 /* TwoTVC.swift */,
+				722609D026DA9BA500448579 /* cell */,
+			);
+			path = VC2;
+			sourceTree = "<group>";
+		};
+		722609D026DA9BA500448579 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				722609D126DA9BCA00448579 /* MainTVCCell.swift */,
+				722609D526DAC47E00448579 /* TwoTVCCell.swift */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
 		72786FC82649068000383C1E /* ParsingJson */ = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +137,7 @@
 		72EDFB882645F2D2007ED56A /* blackstarshop */ = {
 			isa = PBXGroup;
 			children = (
+				722609CD26DA9A4B00448579 /* VC2 */,
 				72EDFB9D2645F337007ED56A /* Model */,
 				72786FC82649068000383C1E /* ParsingJson */,
 				72EDFB9E2645F349007ED56A /* ViewController */,
@@ -244,9 +272,12 @@
 			files = (
 				726642B5265953E000207EBF /* CollectionViewController.swift in Sources */,
 				72EDFB8A2645F2D2007ED56A /* AppDelegate.swift in Sources */,
+				722609D626DAC47E00448579 /* TwoTVCCell.swift in Sources */,
 				72294FF52694F3A200CE0055 /* FunctionRealmBase.swift in Sources */,
 				72EDFBA7264718CD007ED56A /* cell1.swift in Sources */,
 				72634752267E2F6D0053E685 /* PopTableViewCell.swift in Sources */,
+				722609D226DA9BCA00448579 /* MainTVCCell.swift in Sources */,
+				722609D426DAC45C00448579 /* TwoTVC.swift in Sources */,
 				72EDFBA42645FE41007ED56A /* ParsingJson.swift in Sources */,
 				72786FC7264904B200383C1E /* SubCategories.swift in Sources */,
 				726642BB2663B84000207EBF /* ParsingJsonProduct.swift in Sources */,
@@ -258,6 +289,7 @@
 				726642B72659543400207EBF /* CoolectionViewCell.swift in Sources */,
 				72EDFBA02645F3A7007ED56A /* MainTableTableViewController.swift in Sources */,
 				72B7E4A126887C36000F9C6E /* BasketTableViewCell.swift in Sources */,
+				722609CF26DA9A8900448579 /* MainTVC.swift in Sources */,
 				72786FCE264C5FCE00383C1E /* ParsingJsonImageURl.swift in Sources */,
 				72EDFBA22645F3CD007ED56A /* Model.swift in Sources */,
 				72634750267DAE770053E685 /* PopTableViewController.swift in Sources */,

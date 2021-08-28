@@ -26,7 +26,7 @@ class MainTableTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
             readAlamofireDataJson()
-                barBasketItem()
+              //  barBasketItem()
                }
     
     func barBasketItem() {
@@ -87,7 +87,7 @@ class MainTableTableViewController: UITableViewController {
             
                     let imageIcon1 = website+(model.iconImage ?? "ошибка 95")
             
-                        parsingJsonImageUrl(imageIcon1, cell.iconImage)
+                        parsingJsonImageUrl2(imageIcon1, cell.iconImage)
             
             
                             navigationItem.leftBarButtonItem?.isEnabled = true
@@ -99,13 +99,13 @@ class MainTableTableViewController: UITableViewController {
                    return cell
         } else {
             
-            let model = rootStruct[indexPath.row]
+             let model = rootStruct[indexPath.row]
             
                     cell.nameTextCategory.text = model.name
             
                     let imageIcon1 = website+(model.image ?? "ошибка 113")
                     
-                    parsingJsonImageUrl(imageIcon1, cell.iconImage)
+                    parsingJsonImageUrl2(imageIcon1, cell.iconImage)
             
             navigationItem.leftBarButtonItem?.isEnabled = false
             navigationItem.leftBarButtonItem?.title = ""

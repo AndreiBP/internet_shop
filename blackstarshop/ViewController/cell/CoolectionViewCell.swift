@@ -28,10 +28,8 @@ class CoolectionViewCell: UICollectionViewCell {
                 let myInt = myNumber.intValue
                 price.text = String(myInt) }
   
-let imageIcon1 = "http://blackstarshop.ru/"+(menu!.mainImage ?? "")
-          //  if let _ = menu?.mainImage {
-                parsingJsonImageUrl(imageIcon1, image)
-        // }
+let imageIcon1 = "http://blackstarshop.ru/"+(menu?.mainImage ?? "")
+                parsingJsonImageUrl2(imageIcon1, image)
         }
     }
 }

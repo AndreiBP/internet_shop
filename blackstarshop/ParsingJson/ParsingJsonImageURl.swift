@@ -10,6 +10,7 @@
 // Загрузка изображений из JSON
 
 import UIKit
+import AlamofireImage
 import Alamofire
 
 
@@ -30,21 +31,36 @@ import Alamofire
 //    }.resume()
 //}
 
-func parsingJsonImageUrl(_ image: String, _ imageView: UIImageView)  {
+//func parsingJsonImageUrl(_ image: String, _ imageView: UIImageView)  {
+//
+//    let noImage = UIImage(named: "noImage")
+//
+//    AF.request(image, method: .get).response { response in
+//        if response.data != nil {
+//        guard let image = UIImage(data:(response.data!)) else {
+//            imageView.image = noImage
+//                            return }
+//        DispatchQueue.main.async {
+//        let imageData = image.jpegData(compressionQuality: 1.0)
+//            imageView.image = UIImage(data : imageData!)
+////            imageView.layer.cornerRadius = 25
+////            imageView.clipsToBounds = true
+//        }}
+//    }
+//}
+
+func parsingJsonImageUrl2(_ image: String, _ imageView: UIImageView)  {
 
     let noImage = UIImage(named: "noImage")
     
-    AF.request(image, method: .get).response { response in
-        if response.data != nil {
+    AF.request(image).responseImage(completionHandler: { (response) in
         guard let image = UIImage(data:(response.data!)) else {
             imageView.image = noImage
                             return }
         DispatchQueue.main.async {
         let imageData = image.jpegData(compressionQuality: 1.0)
             imageView.image = UIImage(data : imageData!)
-//            imageView.layer.cornerRadius = 25
-//            imageView.clipsToBounds = true
-        }}
-    }
+        }
+    })
 }
 

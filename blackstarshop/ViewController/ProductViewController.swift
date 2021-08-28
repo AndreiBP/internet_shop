@@ -39,7 +39,7 @@ class ProductViewController: UIViewController {
         
                 let image = website + (product?.mainImage ?? "ошибка 40")
                     imagePR = image
-                    parsingJsonImageUrl(image, imageProduct)
+                    parsingJsonImageUrl2(image, imageProduct)
         
             setupGestures()
         
@@ -49,14 +49,14 @@ class ProductViewController: UIViewController {
                 priceProductLabel.text = String(myInt) }
 
         //добавляем bar item корзина на вью и переход в корзину
-        let btn = UIButton(type: .custom)
-            btn.setImage(UIImage(named: "basket"), for: .normal)
-            btn.frame = CGRect(x: 0, y: 0, width: 25, height: 15)
-            btn.addTarget(self, action: #selector(basketVC), for: .touchUpInside)
-            let item = UIBarButtonItem(customView: btn)
-            self.navigationItem.setRightBarButtonItems([item], animated: false)
-            item.customView?.widthAnchor.constraint(equalToConstant: 30).isActive = true
-            item.customView?.heightAnchor.constraint(equalToConstant: 30).isActive = true
+//        let btn = UIButton(type: .custom)
+//            btn.setImage(UIImage(named: "basket"), for: .normal)
+//            btn.frame = CGRect(x: 0, y: 0, width: 25, height: 15)
+//            btn.addTarget(self, action: #selector(basketVC), for: .touchUpInside)
+//            let item = UIBarButtonItem(customView: btn)
+//            self.navigationItem.setRightBarButtonItems([item], animated: false)
+//            item.customView?.widthAnchor.constraint(equalToConstant: 30).isActive = true
+//            item.customView?.heightAnchor.constraint(equalToConstant: 30).isActive = true
                 }
           @objc func basketVC() {
             let storyboard = storyboard?.instantiateViewController(identifier: "BasketViewController") as! BasketViewController

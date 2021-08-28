@@ -17,8 +17,8 @@ class BasketViewController: UIViewController, UIAlertViewDelegate {
             }
     
     let ObjectRealm = FunctionRealmBase.functionRealmBase
-
-        override func viewDidLoad() {
+ 
+    override func viewDidLoad() {
             super.viewDidLoad()
                 }
                     }
@@ -44,7 +44,8 @@ extension BasketViewController: UITableViewDataSource, UITableViewDelegate {
                 cell.sizeProduct.text = tovar.sizeProduct
  
        //загрузка картинок товаров в корзине
-        parsingJsonImageUrl(tovar.imageBasket, cell.imageViewProduct)
+        parsingJsonImageUrl2(tovar.imageBasket, cell.imageViewProduct)
+       
 
         return cell
 }
