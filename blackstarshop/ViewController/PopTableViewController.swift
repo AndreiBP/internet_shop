@@ -33,36 +33,37 @@ class PopTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellPopVC", for: indexPath) as! PopTableViewCell
         
-        let size = infoProduct[indexPath.row].size
-        cell.sizeProduct.text = size
-                
+        cell.infoproduct = infoProduct[indexPath.row]
+
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let a = ProductViewController()
-        
-        let cell = tableView.cellForRow(at: indexPath) as! PopTableViewCell
-        
+
+       // let cell = tableView.cellForRow(at: indexPath) as! PopTableViewCell
+
         //установка галки выбора и передача данных в корзину
-        if  cell.selectionProduct.image == .none {
-            cell.selectionProduct.image = UIImage(named: "galka")
-            
-            a.sizePR = infoProduct[indexPath.row].size
-            
-            // запись выбранного товара в базу Realm
+//        if  cell.selectionProduct.image == .none {
+//            cell.selectionProduct.image = UIImage(named: "galka")
+//
+//            a.sizePR = infoProduct[indexPath.row].size
+      //  cell.takeButton((Any).self)
+//             запись выбранного товара в базу Realm
             let funcRealmBase = FunctionRealmBase.functionRealmBase
-           funcRealmBase.saveTovarRealmBase(titleProduct: nameProduct, priceProduct: priceProduct, sizeProduct: a.sizePR, iconString: imageProduct)           
+           funcRealmBase.saveTovarRealmBase(titleProduct: nameProduct, priceProduct: priceProduct, sizeProduct: a.sizePR, iconString: imageProduct)
             
             tableView.reloadData()
+
+            self.dismiss(animated: true)
             
-        }  else {
-            cell.selectionProduct.image = .none
-            tableView.reloadData()
-        }
+//        }  else {
+//            cell.selectionProduct.image = .none
+//            tableView.reloadData()
+//        }
         
-        self.tableView.reloadData()
+//        self.tableView.reloadData()
     }
 
 }

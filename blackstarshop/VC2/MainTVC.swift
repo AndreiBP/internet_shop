@@ -42,6 +42,7 @@ class MainTVC: UITableViewController {
     let cell = tableView.dequeueReusableCell(withIdentifier: "MainTVCCell", for: indexPath) as! MainTVCCell
     
         cell.menu = rootStruct[indexPath.row]
+        
     
         return cell
     }

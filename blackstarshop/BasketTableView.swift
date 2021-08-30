@@ -17,7 +17,7 @@ class BasketViewController: UIViewController, UIAlertViewDelegate {
             }
     
     let ObjectRealm = FunctionRealmBase.functionRealmBase
- 
+    
     override func viewDidLoad() {
             super.viewDidLoad()
                 }
@@ -33,18 +33,19 @@ extension BasketViewController: UITableViewDataSource, UITableViewDelegate {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "BasketCell", for: indexPath) as! BasketTableViewCell
         
-        let tovar = self.ObjectRealm.tovar[indexPath.row]
+        cell.tovar = self.ObjectRealm.tovar[indexPath.row]
 
-        cell.titleProduct.text = tovar.titleProduct
+        // cell.menu = rootStruct[indexPath.row]
+      //  cell.titleProduct.text = tovar.titleProduct
         
-        if let myNumber = NumberFormatter().number(from: (tovar.priceProduct ?? "ошибка 40")) {
-            let myInt = myNumber.intValue
-                cell.priceProduct.text = String(myInt) }
-        
-                cell.sizeProduct.text = tovar.sizeProduct
+//        if let myNumber = NumberFormatter().number(from: (tovar.priceProduct ?? "ошибка 40")) {
+//            let myInt = myNumber.intValue
+//                cell.priceProduct.text = String(myInt) }
+//
+//                cell.sizeProduct.text = tovar.sizeProduct
  
        //загрузка картинок товаров в корзине
-        parsingJsonImageUrl2(tovar.imageBasket, cell.imageViewProduct)
+        //parsingJsonImageUrl2(tovar.imageBasket, cell.imageViewProduct)
        
 
         return cell

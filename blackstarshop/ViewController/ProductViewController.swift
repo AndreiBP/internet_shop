@@ -25,7 +25,7 @@ class ProductViewController: UIViewController {
     
     var product: Product?
     
-    var imageP: ProductImages?
+    //var imageP: ProductImages?
     
     var sizePR = ""
      var imagePR = ""
@@ -37,14 +37,14 @@ class ProductViewController: UIViewController {
         
             subTitleProductLabel.text = product?.description
         
-                let image = website + (product?.mainImage ?? "ошибка 40")
+                let image = website + (product?.mainImage ?? "ошибка product?.mainImage")
                     imagePR = image
                     parsingJsonImageUrl2(image, imageProduct)
         
             setupGestures()
         
         //убираем лишние 0 из цены
-        if let myNumber = NumberFormatter().number(from: (product?.price) ?? "ошибка 47") {
+        if let myNumber = NumberFormatter().number(from: (product?.price) ?? "ошибка product?.price") {
             let myInt = myNumber.intValue
                 priceProductLabel.text = String(myInt) }
 
@@ -58,10 +58,10 @@ class ProductViewController: UIViewController {
 //            item.customView?.widthAnchor.constraint(equalToConstant: 30).isActive = true
 //            item.customView?.heightAnchor.constraint(equalToConstant: 30).isActive = true
                 }
-          @objc func basketVC() {
-            let storyboard = storyboard?.instantiateViewController(identifier: "BasketViewController") as! BasketViewController
-                navigationController?.pushViewController(storyboard, animated: true)
-                    } //конец добавления bar item
+//          @objc func basketVC() {
+//            let storyboard = storyboard?.instantiateViewController(identifier: "BasketViewController") as! BasketViewController
+//                navigationController?.pushViewController(storyboard, animated: true)
+//                    } //конец добавления bar item
        
     //создание реагирование на нажатие кнопки
     private func setupGestures() {
@@ -84,8 +84,8 @@ class ProductViewController: UIViewController {
                         popVC.preferredContentSize = CGSize(width: view.frame.width, height: view.frame.height / 5.2)
 
                         popVC.infoProduct = (product?.offers)!
-                        popVC.nameProduct = product?.name ?? "ошибка 87"
-                        popVC.priceProduct = product?.price ?? "ошибка 88"
+                        popVC.nameProduct = product?.name ?? "ошибка product?.name"
+                        popVC.priceProduct = product?.price ?? "ошибка product?.price"
                         popVC.imageProduct = imagePR
                         self.present(popVC, animated: false)
                             }

@@ -6,18 +6,15 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireImage
 
 class TwoTVCCell: UITableViewCell {
 
     @IBOutlet weak var nameSubCategories: UILabel!
     
-    @IBOutlet weak var iconSubCategories: UIImageView! {
-        didSet {
-            iconSubCategories.layer.cornerRadius = iconSubCategories.bounds.width / 2
-        }
-    }
-    
-    
+    @IBOutlet weak var iconSubCategories: UIImageView!
+        
     var menuSubStruct: Subcategories? {
         
         didSet { //  присваивание
@@ -26,7 +23,19 @@ class TwoTVCCell: UITableViewCell {
             
             let iconsubcategory = website+(menuSubStruct?.iconImage ?? "ошибка iconsubcategories")
             
-            parsingJsonImageUrl2(iconsubcategory, iconSubCategories)
+            AF.request(iconsubcategory).responseImage { response in
+                if case .success(let image1) = response.result {
+                    let circleImage = image1.af.imageRoundedIntoCircle()
+                    DispatchQueue.main.async {
+                        self.iconSubCategories.image = circleImage
+                    }
+                } else {
+            DispatchQueue.main.async {
+                self.iconSubCategories.image = UIImage(named: "noImage")
+            }
+        }
+            }
+            //parsingJsonImageUrl2(iconsubcategory, iconSubCategories)
                     
             }
                                     }
