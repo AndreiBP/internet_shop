@@ -6,8 +6,6 @@
 //
 
 import UIKit
-import Alamofire
-import AlamofireImage
 
 class BasketTableViewCell: UITableViewCell {
 
@@ -28,20 +26,10 @@ class BasketTableViewCell: UITableViewCell {
                 let myInt = myNumber.intValue
                     priceProduct.text = String(myInt) }
             
-            let a = (tovar?.imageBasket ?? "ошибка iconcategory")
+            let icontovar = (tovar?.imageBasket ?? "ошибка iconcategory")
             
-            AF.request(a).responseImage { response in
-                if case .success(let image1) = response.result {
-                    let circleImage = image1.af.imageRoundedIntoCircle()
-                    DispatchQueue.main.async {
-                        self.imageViewProduct.image = circleImage
-                    }
-                } else {
-            DispatchQueue.main.async {
-                self.imageViewProduct.image = UIImage(named: "noImage")
-            }
-        }
-            }
+            parsingJsonImageUrl(icontovar, imageViewProduct)
+
         }
     }
 }

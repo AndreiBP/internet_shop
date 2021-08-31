@@ -11,7 +11,17 @@
 
 import UIKit
 import AlamofireImage
-import Alamofire
+
+func parsingJsonImageUrl(_ image: String, _ imageView: UIImageView) {
+    
+    let noImage = UIImage(named: "noImage")
+    
+    guard let url = URL(string: image) else { imageView.image = noImage
+        return }
+        imageView.af.setImage(withURL: url)
+   
+}
+
 
 
 
@@ -49,18 +59,18 @@ import Alamofire
 //    }
 //}
 
-func parsingJsonImageUrl2(_ image: String, _ imageView: UIImageView)  {
-
-    let noImage = UIImage(named: "noImage")
-    
-    AF.request(image).responseImage(completionHandler: { (response) in
-        guard let image = UIImage(data:(response.data!)) else {
-            imageView.image = noImage
-                            return }
-        DispatchQueue.main.async {
-        let imageData = image.jpegData(compressionQuality: 1.0)
-            imageView.image = UIImage(data : imageData!)
-        }
-    })
-}
+//func parsingJsonImageUrl2(_ image: String, _ imageView: UIImageView)  {
+//
+//    let noImage = UIImage(named: "noImage")
+//
+//    AF.request(image).responseImage(completionHandler: { (response) in
+//        guard let image = UIImage(data:(response.data!)) else {
+//            imageView.image = noImage
+//                            return }
+//        DispatchQueue.main.async {
+//        let imageData = image.jpegData(compressionQuality: 1.0)
+//            imageView.image = UIImage(data : imageData!)
+//        }
+//    })
+//}
 

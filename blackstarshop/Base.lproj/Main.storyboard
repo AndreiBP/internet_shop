@@ -270,9 +270,6 @@
                                 </state>
                                 <connections>
                                     <action selector="addToСartButton:" destination="gYe-Z2-a21" eventType="touchUpInside" id="csy-Ge-h5i"/>
-                                    <segue destination="7aW-ww-kQA" kind="popoverPresentation" popoverAnchorView="9gV-oq-Gfd" id="5zQ-4s-vm0">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PXx-4e-o08">
@@ -310,11 +307,54 @@
                         <outlet property="buttonOutlet" destination="9gV-oq-Gfd" id="4Gv-aG-Efc"/>
                         <outlet property="imageProduct" destination="nLY-ce-KNR" id="3kG-h2-8AY"/>
                         <outlet property="nameProductLabel" destination="9KR-ET-Eg5" id="Wbd-hr-xpV"/>
+                        <outlet property="popTV" destination="jL1-9n-sjZ" id="rfG-wz-enU"/>
                         <outlet property="priceProductLabel" destination="a85-BM-OO3" id="ZHW-nF-fNn"/>
                         <outlet property="subTitleProductLabel" destination="PXx-4e-o08" id="zNd-Sx-SBu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8wm-hh-Op4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="jL1-9n-sjZ" customClass="PopTV" customModule="blackstarshop" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <prototypes>
+                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="cellPopVC" id="9gh-84-cjp" customClass="PopTVCell" customModule="blackstarshop" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="24.5" width="240" height="31"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9gh-84-cjp" id="ofx-cx-NdL">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="31"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="40" translatesAutoresizingMaskIntoConstraints="NO" id="zlD-am-l4s">
+                                        <rect key="frame" x="193" y="5" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kHG-5a-cvf">
+                                        <rect key="frame" x="5" y="5" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="zlD-am-l4s" firstAttribute="top" secondItem="ofx-cx-NdL" secondAttribute="top" constant="5" id="NTG-MS-lhR"/>
+                                    <constraint firstAttribute="bottom" secondItem="kHG-5a-cvf" secondAttribute="bottom" constant="5" id="OkH-Ga-eo6"/>
+                                    <constraint firstItem="kHG-5a-cvf" firstAttribute="top" secondItem="ofx-cx-NdL" secondAttribute="top" constant="5" id="bM3-us-6uf"/>
+                                    <constraint firstAttribute="bottom" secondItem="zlD-am-l4s" secondAttribute="bottom" constant="5" id="dOY-0a-AvO"/>
+                                    <constraint firstAttribute="trailing" secondItem="zlD-am-l4s" secondAttribute="trailing" constant="5" id="nWd-Vb-Fxh"/>
+                                    <constraint firstItem="kHG-5a-cvf" firstAttribute="leading" secondItem="ofx-cx-NdL" secondAttribute="leading" constant="5" id="xVh-go-mG8"/>
+                                </constraints>
+                            </tableViewCellContentView>
+                            <connections>
+                                <outlet property="colorLabel" destination="kHG-5a-cvf" id="cgm-sx-faX"/>
+                                <outlet property="sizeLabel" destination="zlD-am-l4s" id="9bh-35-svv"/>
+                            </connections>
+                        </tableViewCell>
+                    </prototypes>
+                    <sections/>
+                </tableView>
             </objects>
             <point key="canvasLocation" x="2226" y="-52"/>
         </scene>

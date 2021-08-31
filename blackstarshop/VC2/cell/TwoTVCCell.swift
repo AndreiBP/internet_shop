@@ -6,8 +6,6 @@
 //
 
 import UIKit
-import Alamofire
-import AlamofireImage
 
 class TwoTVCCell: UITableViewCell {
 
@@ -23,19 +21,7 @@ class TwoTVCCell: UITableViewCell {
             
             let iconsubcategory = website+(menuSubStruct?.iconImage ?? "ошибка iconsubcategories")
             
-            AF.request(iconsubcategory).responseImage { response in
-                if case .success(let image1) = response.result {
-                    let circleImage = image1.af.imageRoundedIntoCircle()
-                    DispatchQueue.main.async {
-                        self.iconSubCategories.image = circleImage
-                    }
-                } else {
-            DispatchQueue.main.async {
-                self.iconSubCategories.image = UIImage(named: "noImage")
-            }
-        }
-            }
-            //parsingJsonImageUrl2(iconsubcategory, iconSubCategories)
+            parsingJsonImageUrl(iconsubcategory, iconSubCategories)
                     
             }
                                     }
