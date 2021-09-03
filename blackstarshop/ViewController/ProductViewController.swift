@@ -15,7 +15,7 @@ class ProductViewController: UIViewController {
     @IBOutlet weak var imageProduct: UIImageView!
     
    
-    @IBOutlet var popTV: UITableView!
+    @IBOutlet var PopTV: PopTV!
     
     
     @IBOutlet weak var buttonOutlet: UIButton! {
@@ -25,8 +25,7 @@ class ProductViewController: UIViewController {
     }
     
     @IBAction func addToСartButton(_ sender: Any) {
-        addpopTV(desiredView: popTV)
-        
+        addpopTV(desiredView: PopTV)
     }
     
     
@@ -40,7 +39,7 @@ class ProductViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        popTV.bounds = CGRect(x: 0, y: 0, width: self.view.bounds.width * 0.9, height: self.view.bounds.height * 0.2)
+        PopTV.bounds = CGRect(x: 0, y: 0, width: self.view.bounds.width * 0.9, height: self.view.bounds.height * 0.2)
         
             
         nameProductLabel.text = product?.name
@@ -74,7 +73,7 @@ class ProductViewController: UIViewController {
 //                navigationController?.pushViewController(storyboard, animated: true)
 //                    } //конец добавления bar item
        
-    func addpopTV(desiredView: UITableView) {
+    func addpopTV(desiredView: UIView) {
         let backgroundView = self.view!
         
         backgroundView.addSubview(desiredView)

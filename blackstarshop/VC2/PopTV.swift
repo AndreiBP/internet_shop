@@ -21,7 +21,7 @@ class PopTV: UITableView {
 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellPopVC", for: indexPath) as! PopTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellPopVC", for: indexPath) as! PopTVCell
         
         cell.infoproduct = infoProduct[indexPath.row]
 
@@ -36,8 +36,6 @@ class PopTV: UITableView {
 //             запись выбранного товара в базу Realm
             let funcRealmBase = FunctionRealmBase.functionRealmBase
            funcRealmBase.saveTovarRealmBase(titleProduct: nameProduct, priceProduct: priceProduct, sizeProduct: product.sizePR, iconString: imageProduct)
-            
-            tableView.reloadData()
 
     }
 
