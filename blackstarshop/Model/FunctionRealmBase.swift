@@ -21,13 +21,14 @@ class FunctionRealmBase {
     }
     
     //сохранение в realm для показа в корзине
-    func saveTovarRealmBase(titleProduct: String, priceProduct: String, sizeProduct: String, iconString: String) {
+    func saveTovarRealmBase(titleProduct: String, priceProduct: String, sizeProduct: String, iconString: String, colorProduct: String) {
         let realm = try! Realm()
         let object = RealmBase()
         object.titleProduct = titleProduct
         object.priceProduct = priceProduct
         object.sizeProduct = sizeProduct
         object.imageBasket = iconString
+        object.colorPoduct = colorProduct
         try! realm.write {
             realm.add(object)
             }

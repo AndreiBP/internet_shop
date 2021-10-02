@@ -16,3 +16,5 @@ var urlProduct = ""
 
 var website = "http://blackstarshop.ru/"
 
+var summProduct = 0
+

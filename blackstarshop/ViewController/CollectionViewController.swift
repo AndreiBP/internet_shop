@@ -69,6 +69,13 @@ extension CollectionViewController: UICollectionViewDataSource, UICollectionView
                 guard let productViewController = storyboard.instantiateViewController(identifier: "fourVC") as? ProductViewController else { return }
 
         productViewController.product = menuArray[indexPath.row]
+        
+        productViewController.nameProduct = menuArray[indexPath.row].name ?? "productViewController.nameProduct"
+        productViewController.priceProduct = menuArray[indexPath.row].price ?? "productViewController.priceProduct"
+        productViewController.imageProductSaveBasket = menuArray[indexPath.row].mainImage ?? "productViewController.mainImage"
+        productViewController.infoProduct = menuArray[indexPath.row].offers!
+        productViewController.imageP = menuArray[indexPath.row].productImages!
+
 
         show(productViewController, sender: nil)
             }

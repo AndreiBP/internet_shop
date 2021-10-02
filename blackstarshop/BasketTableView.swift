@@ -9,19 +9,20 @@ import UIKit
 
 class BasketViewController: UIViewController, UIAlertViewDelegate {
     
+    @IBOutlet weak var basketTableView: UITableView!
     
     @IBOutlet weak var totalPrice: UILabel!
     
     override func viewWillAppear(_ animated: Bool) {
         ObjectRealm.allObject()
+        basketTableView.reloadData()
+      // totalPrice.text = String(summProduct)
             }
     
     let ObjectRealm = FunctionRealmBase.functionRealmBase
     
     override func viewDidLoad() {
-            super.viewDidLoad()
-                }
-                    }
+            super.viewDidLoad() }}
 
 extension BasketViewController: UITableViewDataSource, UITableViewDelegate {
     
@@ -34,19 +35,6 @@ extension BasketViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BasketCell", for: indexPath) as! BasketTableViewCell
         
         cell.tovar = self.ObjectRealm.tovar[indexPath.row]
-
-        // cell.menu = rootStruct[indexPath.row]
-      //  cell.titleProduct.text = tovar.titleProduct
-        
-//        if let myNumber = NumberFormatter().number(from: (tovar.priceProduct ?? "ошибка 40")) {
-//            let myInt = myNumber.intValue
-//                cell.priceProduct.text = String(myInt) }
-//
-//                cell.sizeProduct.text = tovar.sizeProduct
- 
-       //загрузка картинок товаров в корзине
-        //parsingJsonImageUrl2(tovar.imageBasket, cell.imageViewProduct)
-       
 
         return cell
 }

@@ -20,6 +20,7 @@ class CoolectionViewCell: UICollectionViewCell {
     
             titleName.text = menu?.name
                 price.text = menu?.price
+            
             if let myNumber = NumberFormatter().number(from: (menu?.price ?? "menu?.price")) {
                 let myInt = myNumber.intValue
                 price.text = "\(String(myInt)) руб." }

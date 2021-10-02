@@ -14,4 +14,5 @@ class RealmBase: Object {
     @objc dynamic var priceProduct: String? = " "
     @objc dynamic var sizeProduct: String? = " "
     @objc dynamic var imageBasket: String = " "
+    @objc dynamic var colorPoduct: String = " "
 }
