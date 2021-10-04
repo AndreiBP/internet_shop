@@ -16,7 +16,7 @@ class BasketViewController: UIViewController, UIAlertViewDelegate {
     override func viewWillAppear(_ animated: Bool) {
         ObjectRealm.allObject()
         basketTableView.reloadData()
-      // totalPrice.text = String(summProduct)
+       totalPrice.text = String(summProduct)
             }
     
     let ObjectRealm = FunctionRealmBase.functionRealmBase
