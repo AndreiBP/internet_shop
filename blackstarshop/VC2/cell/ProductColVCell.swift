@@ -10,15 +10,17 @@ import UIKit
 class ProductColVCell: UICollectionViewCell {
     @IBOutlet weak var imageProduct: UIImageView!
     
-    
     var imageP2: ProductImages? {
         
         didSet { //  присваивание
   
+           
+             
             let imageIcon1 = website + (imageP2?.imageURL ?? "mainImage")
-
-                parsingJsonImageUrl(imageIcon1, imageProduct)
-            }
-    }
+                    parsingJsonImageUrl(imageIcon1, imageProduct) }
+        
+       // ProductImages != "" ? parsingJsonImageUrl(imageIcon1, imageProduct) : parsingJsonImageUrl(imageNoJson, imageProduct)
+        }
+                }
     
-}
+

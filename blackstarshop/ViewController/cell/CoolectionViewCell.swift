@@ -24,10 +24,9 @@ class CoolectionViewCell: UICollectionViewCell {
             if let myNumber = NumberFormatter().number(from: (menu?.price ?? "menu?.price")) {
                 let myInt = myNumber.intValue
                 price.text = "\(String(myInt)) руб." }
-  
-let imageIcon1 = website + (menu?.mainImage ?? "mainImage")
-
-                parsingJsonImageUrl(imageIcon1, image)
+            
+            let imageIcon1 = website + (menu?.mainImage ?? "mainImage")
+            parsingJsonImageUrl(imageIcon1, image)
             }
     }
 }

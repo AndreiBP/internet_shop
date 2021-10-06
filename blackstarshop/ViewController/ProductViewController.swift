@@ -11,12 +11,14 @@ class ProductViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         productTableViewSize.reloadData()
-
+        subTitleProductTextView.isScrollEnabled = false
     }
     
     @IBOutlet weak var nameProductLabel: UILabel!
     @IBOutlet weak var priceProductLabel: UILabel!
-    @IBOutlet weak var subTitleProductLabel: UILabel!
+    
+    @IBOutlet weak var subTitleProductTextView: UITextView!
+    
     
     @IBOutlet weak var imageProduct: UICollectionView!
     
@@ -29,7 +31,7 @@ class ProductViewController: UIViewController {
     
     @IBAction func addToСartButton(_ sender: Any) {
         productTableViewSize.alpha = 1
-       
+        subTitleProductTextView.isScrollEnabled = true
     }
     
     @IBOutlet weak var productTableViewSize: UITableView!
@@ -53,7 +55,12 @@ class ProductViewController: UIViewController {
         
         nameProductLabel.text = product?.name
         
-            subTitleProductLabel.text = product?.description
+        subTitleProductTextView.text = product?.description
+        subTitleProductTextView.backgroundColor = .clear
+        subTitleProductTextView.isEditable = false
+        subTitleProductTextView.isScrollEnabled = false
+            //self.view.sendSubviewToBack(subTitleProductTextView)
+       // self.view.bringSubviewToFront(label)
         
         //убираем лишние 0 из цены
         if let myNumber = NumberFormatter().number(from: (product?.price) ?? "ошибка product?.price") {
