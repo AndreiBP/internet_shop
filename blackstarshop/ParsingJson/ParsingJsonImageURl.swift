@@ -15,11 +15,9 @@ import AlamofireImage
 func parsingJsonImageUrl(_ image: String, _ imageView: UIImageView) {
     
     let noImage = UIImage(named: "noImage")
-    
     guard let url = URL(string: image) else { return }
         imageView.af.setImage(withURL: url, placeholderImage: noImage)
-   
-}
+    }
 
 
 

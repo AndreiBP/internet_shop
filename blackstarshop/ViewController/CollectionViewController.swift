@@ -74,6 +74,7 @@ extension CollectionViewController: UICollectionViewDataSource, UICollectionView
         productViewController.priceProduct = menuArray[indexPath.row].price ?? "productViewController.priceProduct"
         productViewController.imageProductSaveBasket = menuArray[indexPath.row].mainImage ?? "productViewController.mainImage"
         imageNoJson = website + (menuArray[indexPath.row].mainImage ?? "productViewController.mainImage")
+//        imageNoJson = menuArray[indexPath.row].mainImage ?? "productViewController.mainImage"
 
         productViewController.infoProduct = menuArray[indexPath.row].offers!
         productViewController.imageP = menuArray[indexPath.row].productImages!

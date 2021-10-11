@@ -30,8 +30,8 @@ struct Product {
         if let productImagesArray = data["productImages"] as? [[String:Any]]{
                     for value in productImagesArray {
                         let val = ProductImages(data: value as NSDictionary)!
-                        productImages?.append(val) }
-                        }
+                        productImages?.append(val) }}
+            
         offers = [Offers]()
         if let offersArray = data["offers"] as? [[String:Any]]{
                     for value in offersArray {
@@ -43,7 +43,7 @@ struct Product {
         
 
 struct ProductImages {
-    let imageURL: String
+    var imageURL: String
     //let sortOrder: String
     
     init? (data: NSDictionary) {

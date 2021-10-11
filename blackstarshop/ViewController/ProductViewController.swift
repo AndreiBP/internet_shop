@@ -11,16 +11,17 @@ class ProductViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         productTableViewSize.reloadData()
-        subTitleProductTextView.isScrollEnabled = false
+        ScrollView.isScrollEnabled = false
+        productTableViewSize.isHidden = true
     }
     
     @IBOutlet weak var nameProductLabel: UILabel!
     @IBOutlet weak var priceProductLabel: UILabel!
     
-    @IBOutlet weak var subTitleProductTextView: UITextView!
-    
+    @IBOutlet weak var subTitleProductLabel: UILabel!
     
     @IBOutlet weak var imageProduct: UICollectionView!
+    @IBOutlet weak var ScrollView: UIScrollView!
     
     
     @IBOutlet weak var buttonOutlet: UIButton! {
@@ -30,8 +31,9 @@ class ProductViewController: UIViewController {
     }
     
     @IBAction func addToСartButton(_ sender: Any) {
-        productTableViewSize.alpha = 1
-        subTitleProductTextView.isScrollEnabled = true
+        ScrollView.isScrollEnabled = true
+        productTableViewSize.isHidden = false
+
     }
     
     @IBOutlet weak var productTableViewSize: UITableView!
@@ -45,32 +47,23 @@ class ProductViewController: UIViewController {
 
     var nameProduct = ""
     var priceProduct = ""
-   // var imageProd = ""
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.productTableViewSize.register(UINib(nibName: "ProductSizeTableViewCell", bundle: nil), forCellReuseIdentifier: "ProductSizeTableViewCell")
         
         nameProductLabel.text = product?.name
         
-        subTitleProductTextView.text = product?.description
-        subTitleProductTextView.backgroundColor = .clear
-        subTitleProductTextView.isEditable = false
-        subTitleProductTextView.isScrollEnabled = false
-            //self.view.sendSubviewToBack(subTitleProductTextView)
-       // self.view.bringSubviewToFront(label)
-        
+        subTitleProductLabel.text = product?.description
+
         //убираем лишние 0 из цены
         if let myNumber = NumberFormatter().number(from: (product?.price) ?? "ошибка product?.price") {
             let myInt = myNumber.intValue
-                priceProductLabel.text = String(myInt) }
+                priceProductLabel.text = "\(myInt) руб." }
 
         imageProduct.dataSource = self
         imageProduct.delegate = self
        
-        productTableViewSize.alpha = 0
         self.productTableViewSize.dataSource = self
         self.productTableViewSize.delegate = self
     }
@@ -129,7 +122,8 @@ extension ProductViewController: UITableViewDelegate {
 //             запись выбранного товара в базу Realm
            let funcRealmBase = FunctionRealmBase.functionRealmBase
         funcRealmBase.saveTovarRealmBase(titleProduct: nameProduct, priceProduct: priceProduct, sizeProduct: infoProduct[indexPath.row].size, iconString: imageProductSaveBasket, colorProduct: product?.colorName ?? "нет цвета")
-        productTableViewSize.alpha = 0
+        ScrollView.isScrollEnabled = false
+        productTableViewSize.isHidden = true
     }
 
 }

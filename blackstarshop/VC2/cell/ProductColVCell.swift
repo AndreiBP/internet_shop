@@ -13,14 +13,20 @@ class ProductColVCell: UICollectionViewCell {
     var imageP2: ProductImages? {
         
         didSet { //  присваивание
-  
-           
-             
-            let imageIcon1 = website + (imageP2?.imageURL ?? "mainImage")
-                    parsingJsonImageUrl(imageIcon1, imageProduct) }
-        
-       // ProductImages != "" ? parsingJsonImageUrl(imageIcon1, imageProduct) : parsingJsonImageUrl(imageNoJson, imageProduct)
-        }
+            
+//            if ProductImages.self == .none {
+//
+//                parsingJsonImageUrl(imageNoJson, imageProduct)
+//                print("a")
+//
+//            } else {
+                
+            let imageIcon1 = website + (imageP2?.imageURL ?? "")
+                    parsingJsonImageUrl(imageIcon1, imageProduct)
+                   //print("b")
                 }
+        }
+    }
+//}
     
 
