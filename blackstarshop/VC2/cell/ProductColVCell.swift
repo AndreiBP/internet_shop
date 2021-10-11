@@ -20,7 +20,7 @@ class ProductColVCell: UICollectionViewCell {
 //                print("a")
 //
 //            } else {
-                
+               
             let imageIcon1 = website + (imageP2?.imageURL ?? "")
                     parsingJsonImageUrl(imageIcon1, imageProduct)
                    //print("b")
