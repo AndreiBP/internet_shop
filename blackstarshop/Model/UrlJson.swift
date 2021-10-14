@@ -17,6 +17,3 @@ var urlProduct = ""
 var website = "http://blackstarshop.ru/"
 
 var summProduct = 0
-
-//сюда записывается если изображение отсутствует в json
-var imageNoJson = ""

@@ -39,8 +39,8 @@ class ProductViewController: UIViewController {
     @IBOutlet weak var productTableViewSize: UITableView!
     
     var product: Product?
-  
     var imageP = [ProductImages]()
+    
     var imageProductSaveBasket = ""
     
     var infoProduct = [Offers]()
@@ -66,19 +66,26 @@ class ProductViewController: UIViewController {
        
         self.productTableViewSize.dataSource = self
         self.productTableViewSize.delegate = self
+
     }
 }
     
 extension ProductViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if imageP.count == 0 {
+            return min(1, (product?.mainImage!.count)!) }
+        else {
         return imageP.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let itemCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductColVCell", for: indexPath) as? ProductColVCell {
-
-            itemCell.imageP2 = imageP[indexPath.row]
-           
+            if imageP.count == 0 {
+                parsingJsonImageUrl(website + imageProductSaveBasket, itemCell.imageProduct)
+            } else {
+           itemCell.imageP2 = imageP[indexPath.row]
+            }
         return itemCell
     }
         return UICollectionViewCell()
@@ -87,6 +94,7 @@ extension ProductViewController: UICollectionViewDataSource, UICollectionViewDel
 //        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
 //    }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+       
         let size = imageProduct.frame.size
         return CGSize(width: size.width, height: size.height)
     }

@@ -110,7 +110,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="304" id="UCM-p1-pXa"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="GXq-jA-cHz">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="GXq-jA-cHz">
                                     <size key="itemSize" width="414" height="320"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -141,10 +141,10 @@
                                 </connections>
                             </collectionView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w5J-Sq-sYY">
-                                <rect key="frame" x="16" y="356" width="382" height="506"/>
+                                <rect key="frame" x="16" y="356" width="382" height="511"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Jbo-MD-oo0">
-                                        <rect key="frame" x="0.0" y="0.0" width="382" height="505"/>
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Jbo-MD-oo0">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="503.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="название" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9KR-ET-Eg5">
                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="40"/>
@@ -209,25 +209,23 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="PzI-JA-Wtb">
-                                                <rect key="frame" x="0.0" y="160.5" width="382" height="344.5"/>
+                                                <rect key="frame" x="0.0" y="160.5" width="382" height="343"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="344.5" id="HSh-3d-5Lu"/>
+                                                    <constraint firstAttribute="height" constant="343" id="5Tx-5e-6ZL"/>
                                                 </constraints>
                                             </tableView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="PzI-JA-Wtb" firstAttribute="leading" secondItem="Jbo-MD-oo0" secondAttribute="leading" id="H7C-Ia-tyo"/>
-                                            <constraint firstAttribute="trailing" secondItem="PzI-JA-Wtb" secondAttribute="trailing" id="URe-QJ-wl3"/>
-                                            <constraint firstAttribute="bottom" secondItem="PzI-JA-Wtb" secondAttribute="bottom" id="hia-z8-3qX"/>
-                                            <constraint firstAttribute="trailing" secondItem="t6k-PT-axP" secondAttribute="trailing" id="mlo-GJ-03t"/>
-                                            <constraint firstItem="t6k-PT-axP" firstAttribute="leading" secondItem="Jbo-MD-oo0" secondAttribute="leading" id="rdj-Qi-z9w"/>
+                                            <constraint firstItem="PzI-JA-Wtb" firstAttribute="leading" secondItem="Jbo-MD-oo0" secondAttribute="leading" id="ORl-Ox-jBM"/>
+                                            <constraint firstAttribute="bottom" secondItem="PzI-JA-Wtb" secondAttribute="bottom" id="UcD-QA-4wN"/>
+                                            <constraint firstAttribute="trailing" secondItem="PzI-JA-Wtb" secondAttribute="trailing" id="jec-Og-3mN"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Jbo-MD-oo0" secondAttribute="bottom" constant="10" id="6e5-SB-K0d"/>
                                     <constraint firstItem="Jbo-MD-oo0" firstAttribute="width" secondItem="w5J-Sq-sYY" secondAttribute="width" id="CYd-6N-IJ2"/>
-                                    <constraint firstAttribute="bottom" secondItem="Jbo-MD-oo0" secondAttribute="bottom" id="fby-y7-Fx5"/>
                                     <constraint firstItem="Jbo-MD-oo0" firstAttribute="leading" secondItem="w5J-Sq-sYY" secondAttribute="leading" id="iPr-ig-pWj"/>
                                     <constraint firstItem="Jbo-MD-oo0" firstAttribute="top" secondItem="w5J-Sq-sYY" secondAttribute="top" id="m9h-yq-NOL"/>
                                     <constraint firstItem="Jbo-MD-oo0" firstAttribute="trailing" secondItem="w5J-Sq-sYY" secondAttribute="trailing" id="w3i-yp-0ti"/>
@@ -237,7 +235,7 @@
                         <viewLayoutGuide key="safeArea" id="kkG-iP-XCm"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="w5J-Sq-sYY" firstAttribute="bottom" secondItem="kkG-iP-XCm" secondAttribute="bottom" id="5JL-on-bhx"/>
+                            <constraint firstItem="w5J-Sq-sYY" firstAttribute="bottom" secondItem="kkG-iP-XCm" secondAttribute="bottom" constant="5" id="5JL-on-bhx"/>
                             <constraint firstItem="Ht3-jY-6RW" firstAttribute="trailing" secondItem="kkG-iP-XCm" secondAttribute="trailing" id="NPU-Yl-4Cx"/>
                             <constraint firstItem="kkG-iP-XCm" firstAttribute="trailing" secondItem="w5J-Sq-sYY" secondAttribute="trailing" constant="16" id="SBR-ub-Obm"/>
                             <constraint firstItem="w5J-Sq-sYY" firstAttribute="top" secondItem="Ht3-jY-6RW" secondAttribute="bottom" constant="8" id="aA4-Gk-2dS"/>

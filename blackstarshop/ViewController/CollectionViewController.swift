@@ -8,6 +8,9 @@
 // загрузка экрана объектов, выбранной подкатегории
 
 import UIKit
+import Network
+import SwiftUI
+import AlamofireImage
 
 class CollectionViewController: UIViewController {
       
@@ -73,14 +76,14 @@ extension CollectionViewController: UICollectionViewDataSource, UICollectionView
         productViewController.nameProduct = menuArray[indexPath.row].name ?? "productViewController.nameProduct"
         productViewController.priceProduct = menuArray[indexPath.row].price ?? "productViewController.priceProduct"
         productViewController.imageProductSaveBasket = menuArray[indexPath.row].mainImage ?? "productViewController.mainImage"
-        imageNoJson = website + (menuArray[indexPath.row].mainImage ?? "productViewController.mainImage")
-//        imageNoJson = menuArray[indexPath.row].mainImage ?? "productViewController.mainImage"
 
-        productViewController.infoProduct = menuArray[indexPath.row].offers!
-        productViewController.imageP = menuArray[indexPath.row].productImages!
-
-
-
+        guard let infoProduct2 = menuArray[indexPath.row].offers else { return }
+        productViewController.infoProduct = infoProduct2
+        
+        
+        guard let productImages2 = menuArray[indexPath.row].productImages else { return }
+            productViewController.imageP = productImages2
+           
         show(productViewController, sender: nil)
             }
 }
