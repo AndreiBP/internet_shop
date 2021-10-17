@@ -22,6 +22,7 @@ class ProductViewController: UIViewController {
     
     @IBOutlet weak var imageProduct: UICollectionView!
     @IBOutlet weak var ScrollView: UIScrollView!
+    @IBOutlet weak var stackView: UIStackView!
     
     
     @IBOutlet weak var buttonOutlet: UIButton! {

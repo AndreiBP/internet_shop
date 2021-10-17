@@ -150,7 +150,7 @@
                                 <rect key="frame" x="16" y="356" width="382" height="511"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Jbo-MD-oo0">
-                                        <rect key="frame" x="0.0" y="0.0" width="382" height="503.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="511"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="название" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9KR-ET-Eg5">
                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="40"/>
@@ -215,27 +215,25 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="PzI-JA-Wtb">
-                                                <rect key="frame" x="0.0" y="160.5" width="382" height="343"/>
+                                                <rect key="frame" x="0.0" y="160.5" width="382" height="350.5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="343" id="5Tx-5e-6ZL"/>
-                                                </constraints>
                                             </tableView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="PzI-JA-Wtb" firstAttribute="leading" secondItem="Jbo-MD-oo0" secondAttribute="leading" id="ORl-Ox-jBM"/>
-                                            <constraint firstAttribute="bottom" secondItem="PzI-JA-Wtb" secondAttribute="bottom" id="UcD-QA-4wN"/>
-                                            <constraint firstAttribute="trailing" secondItem="PzI-JA-Wtb" secondAttribute="trailing" id="jec-Og-3mN"/>
+                                            <constraint firstItem="PzI-JA-Wtb" firstAttribute="top" secondItem="t6k-PT-axP" secondAttribute="bottom" constant="5" id="XY0-wq-I61"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="Jbo-MD-oo0" secondAttribute="bottom" constant="10" id="6e5-SB-K0d"/>
-                                    <constraint firstItem="Jbo-MD-oo0" firstAttribute="width" secondItem="w5J-Sq-sYY" secondAttribute="width" id="CYd-6N-IJ2"/>
-                                    <constraint firstItem="Jbo-MD-oo0" firstAttribute="leading" secondItem="w5J-Sq-sYY" secondAttribute="leading" id="iPr-ig-pWj"/>
-                                    <constraint firstItem="Jbo-MD-oo0" firstAttribute="top" secondItem="w5J-Sq-sYY" secondAttribute="top" id="m9h-yq-NOL"/>
-                                    <constraint firstItem="Jbo-MD-oo0" firstAttribute="trailing" secondItem="w5J-Sq-sYY" secondAttribute="trailing" id="w3i-yp-0ti"/>
+                                    <constraint firstItem="Jbo-MD-oo0" firstAttribute="leading" secondItem="6Gi-nA-ySw" secondAttribute="leading" id="6tq-jj-4b9"/>
+                                    <constraint firstItem="6Gi-nA-ySw" firstAttribute="bottom" secondItem="Jbo-MD-oo0" secondAttribute="bottom" constant="7.5" id="9HZ-cW-aav"/>
+                                    <constraint firstItem="Jbo-MD-oo0" firstAttribute="width" secondItem="JYT-jq-GWU" secondAttribute="width" id="Cta-KW-fax"/>
+                                    <constraint firstItem="Jbo-MD-oo0" firstAttribute="top" secondItem="6Gi-nA-ySw" secondAttribute="top" id="FZc-ri-bTj"/>
+                                    <constraint firstItem="6Gi-nA-ySw" firstAttribute="trailing" secondItem="Jbo-MD-oo0" secondAttribute="trailing" id="QoV-dg-Cmx"/>
+                                    <constraint firstItem="Jbo-MD-oo0" firstAttribute="height" secondItem="JYT-jq-GWU" secondAttribute="height" priority="250" id="dxW-ng-9xX"/>
                                 </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="6Gi-nA-ySw"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="JYT-jq-GWU"/>
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kkG-iP-XCm"/>
@@ -247,7 +245,7 @@
                             <constraint firstItem="w5J-Sq-sYY" firstAttribute="top" secondItem="Ht3-jY-6RW" secondAttribute="bottom" constant="8" id="aA4-Gk-2dS"/>
                             <constraint firstItem="Ht3-jY-6RW" firstAttribute="top" secondItem="kkG-iP-XCm" secondAttribute="top" id="isH-L7-jQA"/>
                             <constraint firstItem="Ht3-jY-6RW" firstAttribute="leading" secondItem="kkG-iP-XCm" secondAttribute="leading" id="j4H-Fv-8Sr"/>
-                            <constraint firstItem="w5J-Sq-sYY" firstAttribute="leading" secondItem="kkG-iP-XCm" secondAttribute="leading" constant="16" id="rBv-dS-fUp"/>
+                            <constraint firstItem="w5J-Sq-sYY" firstAttribute="leading" secondItem="kkG-iP-XCm" secondAttribute="leading" constant="16" id="obt-og-hWl"/>
                         </constraints>
                     </view>
                     <connections>
@@ -257,6 +255,7 @@
                         <outlet property="nameProductLabel" destination="9KR-ET-Eg5" id="Wbd-hr-xpV"/>
                         <outlet property="priceProductLabel" destination="a85-BM-OO3" id="ZHW-nF-fNn"/>
                         <outlet property="productTableViewSize" destination="PzI-JA-Wtb" id="kEt-wO-uQW"/>
+                        <outlet property="stackView" destination="Jbo-MD-oo0" id="jdc-7d-yLc"/>
                         <outlet property="subTitleProductLabel" destination="t6k-PT-axP" id="ZMC-i5-mhn"/>
                     </connections>
                 </viewController>
