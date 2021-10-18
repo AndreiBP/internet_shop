@@ -23,7 +23,8 @@ class ProductSizeTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         viewCell.layer.cornerRadius = 10
-        contentViewCell.layer.cornerRadius = 10
+        viewCell.layer.borderWidth = 2.0
+        viewCell.layer.borderColor = UIColor.blue.cgColor
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

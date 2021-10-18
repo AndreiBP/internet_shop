@@ -21,28 +21,27 @@
                         <rect key="frame" x="5" y="5" width="310" height="58"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QLR-1Q-xil">
-                                <rect key="frame" x="238" y="5" width="52" height="48"/>
-                                <fontDescription key="fontDescription" name="SnellRoundhand" family="Snell Roundhand" pointSize="26"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="230.5" y="5" width="59.5" height="48"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="System Font" pointSize="26"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="В корзину" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T9R-Vo-2Hd">
-                                <rect key="frame" x="10" y="5" width="110.5" height="48"/>
-                                <fontDescription key="fontDescription" name="SnellRoundhand" family="Snell Roundhand" pointSize="26"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Беру" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T9R-Vo-2Hd">
+                                <rect key="frame" x="10" y="5" width="52.5" height="48"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="System Font" pointSize="26"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="размер" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PSk-Z1-OtN">
-                                <rect key="frame" x="135.5" y="5" width="83" height="48"/>
+                                <rect key="frame" x="107" y="5" width="83" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="83" id="L8Q-fc-sq4"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="SnellRoundhand" family="Snell Roundhand" pointSize="26"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="System Font" pointSize="26"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="PSk-Z1-OtN" firstAttribute="baseline" secondItem="QLR-1Q-xil" secondAttribute="baseline" id="Bwn-7Z-gM4"/>
                             <constraint firstItem="T9R-Vo-2Hd" firstAttribute="top" secondItem="BTE-dS-PRQ" secondAttribute="top" constant="5" id="K15-8C-E1k"/>
@@ -51,7 +50,7 @@
                             <constraint firstItem="PSk-Z1-OtN" firstAttribute="firstBaseline" secondItem="QLR-1Q-xil" secondAttribute="firstBaseline" id="au9-xG-BNC"/>
                             <constraint firstItem="T9R-Vo-2Hd" firstAttribute="leading" secondItem="BTE-dS-PRQ" secondAttribute="leading" constant="10" id="f4d-Ar-cPN"/>
                             <constraint firstItem="QLR-1Q-xil" firstAttribute="top" secondItem="BTE-dS-PRQ" secondAttribute="top" constant="5" id="j5p-l2-ohO"/>
-                            <constraint firstItem="PSk-Z1-OtN" firstAttribute="leading" secondItem="T9R-Vo-2Hd" secondAttribute="trailing" constant="15" id="xUa-im-DCN"/>
+                            <constraint firstItem="PSk-Z1-OtN" firstAttribute="leading" secondItem="T9R-Vo-2Hd" secondAttribute="trailing" constant="44.5" id="xUa-im-DCN"/>
                             <constraint firstAttribute="trailing" secondItem="QLR-1Q-xil" secondAttribute="trailing" constant="20" id="xaO-Le-Fxp"/>
                         </constraints>
                     </view>
