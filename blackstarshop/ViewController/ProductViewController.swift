@@ -11,7 +11,6 @@ class ProductViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         productTableViewSize.reloadData()
-        ScrollView.isScrollEnabled = false
         productTableViewSize.isHidden = true
     }
     
@@ -19,7 +18,6 @@ class ProductViewController: UIViewController {
     @IBOutlet weak var priceProductLabel: UILabel!
     
     @IBOutlet weak var subTitleProductLabel: UILabel!
-    
     @IBOutlet weak var imageProduct: UICollectionView!
     @IBOutlet weak var ScrollView: UIScrollView!
     @IBOutlet weak var stackView: UIStackView!
@@ -32,9 +30,7 @@ class ProductViewController: UIViewController {
     }
     
     @IBAction func addToСartButton(_ sender: Any) {
-        ScrollView.isScrollEnabled = true
         productTableViewSize.isHidden = false
-
     }
     
     @IBOutlet weak var productTableViewSize: UITableView!
@@ -132,7 +128,6 @@ extension ProductViewController: UITableViewDelegate {
 //             запись выбранного товара в базу Realm
            let funcRealmBase = FunctionRealmBase.functionRealmBase
         funcRealmBase.saveTovarRealmBase(titleProduct: nameProduct, priceProduct: priceProduct, sizeProduct: infoProduct[indexPath.row].size, iconString: imageProductSaveBasket, colorProduct: product?.colorName ?? "нет цвета")
-        ScrollView.isScrollEnabled = false
         productTableViewSize.isHidden = true
     }
 

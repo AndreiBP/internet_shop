@@ -104,7 +104,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ht3-jY-6RW">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ht3-jY-6RW">
                                 <rect key="frame" x="0.0" y="44" width="414" height="304"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -147,7 +147,7 @@
                                 </connections>
                             </collectionView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w5J-Sq-sYY">
-                                <rect key="frame" x="16" y="356" width="382" height="511"/>
+                                <rect key="frame" x="16" y="356" width="382" height="506"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Jbo-MD-oo0">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="511"/>
@@ -208,7 +208,7 @@
                                                     <constraint firstAttribute="trailing" secondItem="a85-BM-OO3" secondAttribute="trailing" id="qs8-su-2R6"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t6k-PT-axP">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="njN-rk-eKY">
                                                 <rect key="frame" x="0.0" y="135" width="382" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -220,7 +220,10 @@
                                             </tableView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="PzI-JA-Wtb" firstAttribute="top" secondItem="t6k-PT-axP" secondAttribute="bottom" constant="5" id="XY0-wq-I61"/>
+                                            <constraint firstItem="PzI-JA-Wtb" firstAttribute="top" secondItem="njN-rk-eKY" secondAttribute="bottom" constant="5" id="ei8-F3-Sg8"/>
+                                            <constraint firstAttribute="trailing" secondItem="njN-rk-eKY" secondAttribute="trailing" id="mF9-EW-EXD"/>
+                                            <constraint firstItem="njN-rk-eKY" firstAttribute="top" secondItem="jhA-yI-AYV" secondAttribute="bottom" constant="5" id="nuK-5A-vcD"/>
+                                            <constraint firstItem="njN-rk-eKY" firstAttribute="leading" secondItem="Jbo-MD-oo0" secondAttribute="leading" id="w26-Si-GFF"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
@@ -239,7 +242,7 @@
                         <viewLayoutGuide key="safeArea" id="kkG-iP-XCm"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="w5J-Sq-sYY" firstAttribute="bottom" secondItem="kkG-iP-XCm" secondAttribute="bottom" constant="5" id="5JL-on-bhx"/>
+                            <constraint firstItem="w5J-Sq-sYY" firstAttribute="bottom" secondItem="kkG-iP-XCm" secondAttribute="bottom" id="5JL-on-bhx"/>
                             <constraint firstItem="Ht3-jY-6RW" firstAttribute="trailing" secondItem="kkG-iP-XCm" secondAttribute="trailing" id="NPU-Yl-4Cx"/>
                             <constraint firstItem="kkG-iP-XCm" firstAttribute="trailing" secondItem="w5J-Sq-sYY" secondAttribute="trailing" constant="16" id="SBR-ub-Obm"/>
                             <constraint firstItem="w5J-Sq-sYY" firstAttribute="top" secondItem="Ht3-jY-6RW" secondAttribute="bottom" constant="8" id="aA4-Gk-2dS"/>
@@ -256,7 +259,7 @@
                         <outlet property="priceProductLabel" destination="a85-BM-OO3" id="ZHW-nF-fNn"/>
                         <outlet property="productTableViewSize" destination="PzI-JA-Wtb" id="kEt-wO-uQW"/>
                         <outlet property="stackView" destination="Jbo-MD-oo0" id="jdc-7d-yLc"/>
-                        <outlet property="subTitleProductLabel" destination="t6k-PT-axP" id="ZMC-i5-mhn"/>
+                        <outlet property="subTitleProductLabel" destination="njN-rk-eKY" id="R75-QO-h47"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8wm-hh-Op4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
