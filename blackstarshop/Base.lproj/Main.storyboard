@@ -150,7 +150,7 @@
                                 <rect key="frame" x="16" y="356" width="382" height="506"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jhA-yI-AYV">
-                                        <rect key="frame" x="0.0" y="0.0" width="382" height="506"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="169.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="название" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9KR-ET-Eg5">
                                                 <rect key="frame" x="0.0" y="5" width="382" height="40"/>
@@ -197,15 +197,15 @@
                                         <constraints>
                                             <constraint firstItem="9KR-ET-Eg5" firstAttribute="top" secondItem="jhA-yI-AYV" secondAttribute="top" constant="5" id="1N1-2F-sdd"/>
                                             <constraint firstItem="Snt-bW-dLN" firstAttribute="leading" secondItem="jhA-yI-AYV" secondAttribute="leading" id="3Xj-ea-VzP"/>
-                                            <constraint firstItem="9gV-oq-Gfd" firstAttribute="top" secondItem="Snt-bW-dLN" secondAttribute="bottom" constant="8" id="Bco-6E-2jr"/>
                                             <constraint firstItem="a85-BM-OO3" firstAttribute="firstBaseline" secondItem="Snt-bW-dLN" secondAttribute="baseline" id="GuG-Q5-RrP"/>
-                                            <constraint firstItem="njN-rk-eKY" firstAttribute="top" secondItem="9gV-oq-Gfd" secondAttribute="bottom" constant="8" id="Lc2-QI-KMW"/>
+                                            <constraint firstAttribute="bottom" secondItem="njN-rk-eKY" secondAttribute="bottom" constant="20" id="HTQ-wl-ETT"/>
                                             <constraint firstAttribute="trailing" secondItem="9KR-ET-Eg5" secondAttribute="trailing" id="NWI-Gb-0nf"/>
                                             <constraint firstAttribute="trailing" secondItem="a85-BM-OO3" secondAttribute="trailing" constant="14" id="Qe2-G2-oLH"/>
                                             <constraint firstItem="9KR-ET-Eg5" firstAttribute="leading" secondItem="jhA-yI-AYV" secondAttribute="leading" id="XUu-rR-GOj"/>
                                             <constraint firstItem="Snt-bW-dLN" firstAttribute="top" secondItem="jhA-yI-AYV" secondAttribute="top" constant="41" id="cCl-Vk-Myz"/>
                                             <constraint firstItem="9gV-oq-Gfd" firstAttribute="top" secondItem="a85-BM-OO3" secondAttribute="bottom" id="eCi-3A-Chf"/>
                                             <constraint firstAttribute="trailing" secondItem="9gV-oq-Gfd" secondAttribute="trailing" id="hYb-g2-OaY"/>
+                                            <constraint firstItem="njN-rk-eKY" firstAttribute="top" secondItem="9gV-oq-Gfd" secondAttribute="bottom" constant="8" id="jW9-GL-2N0"/>
                                             <constraint firstItem="njN-rk-eKY" firstAttribute="leading" secondItem="9gV-oq-Gfd" secondAttribute="leading" id="n8X-Re-9g5"/>
                                             <constraint firstItem="njN-rk-eKY" firstAttribute="trailing" secondItem="9gV-oq-Gfd" secondAttribute="trailing" id="nBQ-8X-TvX"/>
                                             <constraint firstItem="9gV-oq-Gfd" firstAttribute="leading" secondItem="jhA-yI-AYV" secondAttribute="leading" id="osR-RJ-Uz3"/>
@@ -215,17 +215,16 @@
                                     </view>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="jhA-yI-AYV" firstAttribute="trailing" secondItem="6Gi-nA-ySw" secondAttribute="trailing" constant="382" id="6Jy-gs-o86"/>
                                     <constraint firstItem="jhA-yI-AYV" firstAttribute="top" secondItem="6Gi-nA-ySw" secondAttribute="top" id="N6x-3R-Aba"/>
+                                    <constraint firstItem="jhA-yI-AYV" firstAttribute="leading" secondItem="6Gi-nA-ySw" secondAttribute="leading" id="Ntv-oO-GyE"/>
                                     <constraint firstItem="jhA-yI-AYV" firstAttribute="width" secondItem="JYT-jq-GWU" secondAttribute="width" id="UBA-Rb-530"/>
-                                    <constraint firstItem="jhA-yI-AYV" firstAttribute="bottom" secondItem="JYT-jq-GWU" secondAttribute="bottom" id="Wft-Kd-d9s"/>
-                                    <constraint firstAttribute="trailing" secondItem="jhA-yI-AYV" secondAttribute="trailing" id="d1V-0C-Qps"/>
-                                    <constraint firstItem="jhA-yI-AYV" firstAttribute="leading" secondItem="w5J-Sq-sYY" secondAttribute="leading" id="fkw-qL-twW"/>
                                     <constraint firstItem="jhA-yI-AYV" firstAttribute="bottom" secondItem="6Gi-nA-ySw" secondAttribute="bottom" id="rvy-So-12M"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="6Gi-nA-ySw"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="JYT-jq-GWU"/>
                             </scrollView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="PzI-JA-Wtb">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="PzI-JA-Wtb">
                                 <rect key="frame" x="16" y="488" width="382" height="374"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>

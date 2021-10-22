@@ -20,46 +20,34 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BTE-dS-PRQ">
                         <rect key="frame" x="5" y="5" width="310" height="58"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="размер" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PSk-Z1-OtN">
+                                <rect key="frame" x="8" y="5" width="75.5" height="48"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="System Font" pointSize="26"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QLR-1Q-xil">
-                                <rect key="frame" x="230.5" y="5" width="59.5" height="48"/>
-                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="System Font" pointSize="26"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Беру" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T9R-Vo-2Hd">
-                                <rect key="frame" x="10" y="5" width="52.5" height="48"/>
-                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="System Font" pointSize="26"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="размер" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PSk-Z1-OtN">
-                                <rect key="frame" x="107" y="5" width="83" height="48"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="83" id="L8Q-fc-sq4"/>
-                                </constraints>
+                                <rect key="frame" x="242.5" y="5" width="59.5" height="48"/>
                                 <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="System Font" pointSize="26"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="PSk-Z1-OtN" firstAttribute="baseline" secondItem="QLR-1Q-xil" secondAttribute="baseline" id="Bwn-7Z-gM4"/>
-                            <constraint firstItem="T9R-Vo-2Hd" firstAttribute="top" secondItem="BTE-dS-PRQ" secondAttribute="top" constant="5" id="K15-8C-E1k"/>
-                            <constraint firstAttribute="bottom" secondItem="T9R-Vo-2Hd" secondAttribute="bottom" constant="5" id="Npv-8e-df7"/>
-                            <constraint firstAttribute="bottom" secondItem="QLR-1Q-xil" secondAttribute="bottom" constant="5" id="Of2-U4-uVH"/>
-                            <constraint firstItem="PSk-Z1-OtN" firstAttribute="firstBaseline" secondItem="QLR-1Q-xil" secondAttribute="firstBaseline" id="au9-xG-BNC"/>
-                            <constraint firstItem="T9R-Vo-2Hd" firstAttribute="leading" secondItem="BTE-dS-PRQ" secondAttribute="leading" constant="10" id="f4d-Ar-cPN"/>
-                            <constraint firstItem="QLR-1Q-xil" firstAttribute="top" secondItem="BTE-dS-PRQ" secondAttribute="top" constant="5" id="j5p-l2-ohO"/>
-                            <constraint firstItem="PSk-Z1-OtN" firstAttribute="leading" secondItem="T9R-Vo-2Hd" secondAttribute="trailing" constant="44.5" id="xUa-im-DCN"/>
-                            <constraint firstAttribute="trailing" secondItem="QLR-1Q-xil" secondAttribute="trailing" constant="20" id="xaO-Le-Fxp"/>
+                            <constraint firstItem="PSk-Z1-OtN" firstAttribute="top" secondItem="BTE-dS-PRQ" secondAttribute="top" constant="5" id="9ya-cx-gss"/>
+                            <constraint firstItem="QLR-1Q-xil" firstAttribute="top" secondItem="BTE-dS-PRQ" secondAttribute="top" constant="5" id="CFN-cG-6Nz"/>
+                            <constraint firstAttribute="bottom" secondItem="QLR-1Q-xil" secondAttribute="bottom" constant="5" id="EL7-Py-CL3"/>
+                            <constraint firstItem="PSk-Z1-OtN" firstAttribute="leading" secondItem="BTE-dS-PRQ" secondAttribute="leading" constant="8" id="LFE-FC-otT"/>
+                            <constraint firstAttribute="bottom" secondItem="PSk-Z1-OtN" secondAttribute="bottom" constant="5" id="SeS-uM-VFj"/>
+                            <constraint firstAttribute="trailing" secondItem="QLR-1Q-xil" secondAttribute="trailing" constant="8" id="pYh-Vt-Uj1"/>
                         </constraints>
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="BTE-dS-PRQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="NPu-IN-wu4"/>
-                    <constraint firstAttribute="trailing" secondItem="BTE-dS-PRQ" secondAttribute="trailing" constant="5" id="Zgd-x4-eSw"/>
-                    <constraint firstAttribute="bottom" secondItem="BTE-dS-PRQ" secondAttribute="bottom" constant="5" id="kGx-vz-3G1"/>
-                    <constraint firstItem="BTE-dS-PRQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="rSp-VP-1rs"/>
+                    <constraint firstAttribute="trailing" secondItem="BTE-dS-PRQ" secondAttribute="trailing" constant="5" id="1W7-tV-8M6"/>
+                    <constraint firstItem="BTE-dS-PRQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="NAI-fw-v7d"/>
+                    <constraint firstItem="BTE-dS-PRQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="xFt-e6-tE7"/>
+                    <constraint firstAttribute="bottom" secondItem="BTE-dS-PRQ" secondAttribute="bottom" constant="5" id="xj0-Bt-298"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
