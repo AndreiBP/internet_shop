@@ -247,8 +247,11 @@
                     </view>
                     <connections>
                         <outlet property="ScrollView" destination="w5J-Sq-sYY" id="KJc-Nd-XNk"/>
+                        <outlet property="addedProductBasketView" destination="mUH-6Z-WnB" id="6ys-RN-crg"/>
+                        <outlet property="addedProductBasketView2" destination="8N0-s5-3b4" id="mac-yX-bue"/>
                         <outlet property="buttonOutlet" destination="9gV-oq-Gfd" id="4Gv-aG-Efc"/>
                         <outlet property="imageProduct" destination="Ht3-jY-6RW" id="VpA-ka-2en"/>
+                        <outlet property="labeladdedProductBasketView" destination="kbB-fw-OYy" id="MhS-3S-Zb5"/>
                         <outlet property="nameProductLabel" destination="9KR-ET-Eg5" id="Wbd-hr-xpV"/>
                         <outlet property="priceProductLabel" destination="a85-BM-OO3" id="ZHW-nF-fNn"/>
                         <outlet property="productTableViewSize" destination="PzI-JA-Wtb" id="kEt-wO-uQW"/>
@@ -256,6 +259,34 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8wm-hh-Op4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="mUH-6Z-WnB">
+                    <rect key="frame" x="0.0" y="0.0" width="270" height="50"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8N0-s5-3b4">
+                            <rect key="frame" x="5" y="5" width="260" height="40"/>
+                            <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="товар добавлен в корзину" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kbB-fw-OYy">
+                            <rect key="frame" x="30.5" y="5" width="209.5" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="1A1-Sy-cAv"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="ocT-P4-wJk"/>
+                    <constraints>
+                        <constraint firstItem="kbB-fw-OYy" firstAttribute="centerY" secondItem="mUH-6Z-WnB" secondAttribute="centerY" id="1gk-eP-zkg"/>
+                        <constraint firstAttribute="bottom" secondItem="8N0-s5-3b4" secondAttribute="bottom" constant="5" id="861-s2-mrB"/>
+                        <constraint firstItem="8N0-s5-3b4" firstAttribute="top" secondItem="mUH-6Z-WnB" secondAttribute="top" constant="5" id="Hw8-ET-T1P"/>
+                        <constraint firstItem="8N0-s5-3b4" firstAttribute="leading" secondItem="ocT-P4-wJk" secondAttribute="leading" constant="5" id="V93-s8-vmE"/>
+                        <constraint firstItem="kbB-fw-OYy" firstAttribute="centerX" secondItem="mUH-6Z-WnB" secondAttribute="centerX" id="shf-F5-w6E"/>
+                        <constraint firstItem="ocT-P4-wJk" firstAttribute="trailing" secondItem="8N0-s5-3b4" secondAttribute="trailing" constant="5" id="yTm-2A-7Ly"/>
+                    </constraints>
+                </view>
             </objects>
             <point key="canvasLocation" x="4947.826086956522" y="1630.5803571428571"/>
         </scene>
@@ -573,6 +604,9 @@
         </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

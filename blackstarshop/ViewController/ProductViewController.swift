@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class ProductViewController: UIViewController {
     
@@ -18,10 +19,12 @@ class ProductViewController: UIViewController {
     @IBOutlet weak var priceProductLabel: UILabel!
     
     @IBOutlet weak var subTitleProductLabel: UILabel!
-    @IBOutlet weak var imageProduct: UICollectionView!
-    @IBOutlet weak var ScrollView: UIScrollView!
-    @IBOutlet weak var stackView: UIStackView!
+        @IBOutlet weak var imageProduct: UICollectionView!
+            @IBOutlet weak var ScrollView: UIScrollView!
     
+    @IBOutlet var addedProductBasketView: UIView!
+        @IBOutlet weak var labeladdedProductBasketView: UILabel!
+            @IBOutlet weak var addedProductBasketView2: UIView!
     
     @IBOutlet weak var buttonOutlet: UIButton! {
         didSet {
@@ -87,9 +90,7 @@ extension ProductViewController: UICollectionViewDataSource, UICollectionViewDel
     }
         return UICollectionViewCell()
     }
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-//        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-//    }
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
        
         let sizeW = UIScreen.main.bounds.width
@@ -99,9 +100,6 @@ extension ProductViewController: UICollectionViewDataSource, UICollectionViewDel
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 5
     }
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-//        return 0
-//    }
 }
 
 
@@ -111,7 +109,6 @@ extension ProductViewController: UITableViewDataSource {
         return infoProduct.count
    }
 
-   
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProductSizeTableViewCell", for: indexPath) as! ProductSizeTableViewCell
         
@@ -123,13 +120,23 @@ extension ProductViewController: UITableViewDataSource {
 
 extension ProductViewController: UITableViewDelegate {
     
+    func addedView() {
+        self.view.addSubview(addedProductBasketView)
+    addedProductBasketView.alpha = 0.8
+        self.addedProductBasketView.center.x = self.view.center.x
+    self.addedProductBasketView.center.y = self.view.center.y / 2
+    self.addedProductBasketView2.layer.cornerRadius = self.addedProductBasketView2.frame.height / 2
+    UIView.animate(withDuration: 1) {
+        self.addedProductBasketView.alpha = 0
+       // self.view.willRemoveSubview(self.addedProductBasketView)
+                                    }
+                    }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        addedView()
 //             запись выбранного товара в базу Realm
            let funcRealmBase = FunctionRealmBase.functionRealmBase
         funcRealmBase.saveTovarRealmBase(titleProduct: nameProduct, priceProduct: priceProduct, sizeProduct: infoProduct[indexPath.row].size, iconString: imageProductSaveBasket, colorProduct: product?.colorName ?? "нет цвета")
         productTableViewSize.isHidden = true
     }
-
 }
 
