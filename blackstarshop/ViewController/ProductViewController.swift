@@ -97,12 +97,7 @@ extension ProductViewController: UICollectionViewDataSource, UICollectionViewDel
         let sizeH = UIScreen.main.bounds.height
         return CGSize(width: sizeW, height: sizeH)
     }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 5
-    }
 }
-
-
 extension ProductViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

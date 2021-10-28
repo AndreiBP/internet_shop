@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xaa-QB-WCH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xaa-QB-WCH">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -110,7 +110,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="304" id="UCM-p1-pXa"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="GXq-jA-cHz">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="GXq-jA-cHz">
                                     <size key="itemSize" width="414" height="312"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -260,15 +260,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8wm-hh-Op4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <view contentMode="scaleToFill" id="mUH-6Z-WnB">
-                    <rect key="frame" x="0.0" y="0.0" width="270" height="50"/>
+                    <rect key="frame" x="0.0" y="0.0" width="270" height="80"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8N0-s5-3b4">
-                            <rect key="frame" x="5" y="5" width="260" height="40"/>
+                            <rect key="frame" x="5" y="5" width="260" height="70"/>
                             <color key="backgroundColor" systemColor="systemOrangeColor"/>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="товар добавлен в корзину" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kbB-fw-OYy">
-                            <rect key="frame" x="30.5" y="5" width="209.5" height="40"/>
+                            <rect key="frame" x="30.5" y="20" width="209.5" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="1A1-Sy-cAv"/>
                             </constraints>
@@ -343,8 +343,44 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="sqG-nx-xtE"/>
+                    <connections>
+                        <outlet property="noSubCategori" destination="bGs-OK-oU1" id="KB4-AO-8Zk"/>
+                        <outlet property="noSubCategori2" destination="sM2-1M-oFx" id="cn6-4t-dbV"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uBW-ph-vl4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="bGs-OK-oU1">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="80"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sM2-1M-oFx">
+                            <rect key="frame" x="5" y="5" width="230" height="80"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Извините, товары отстуствуют" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4dO-4n-ZHk">
+                                    <rect key="frame" x="5" y="5" width="220" height="70"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemPinkColor"/>
+                            <constraints>
+                                <constraint firstItem="4dO-4n-ZHk" firstAttribute="leading" secondItem="sM2-1M-oFx" secondAttribute="leading" constant="5" id="9rf-wq-s8F"/>
+                                <constraint firstAttribute="bottom" secondItem="4dO-4n-ZHk" secondAttribute="bottom" constant="5" id="BnN-uz-Bjp"/>
+                                <constraint firstItem="4dO-4n-ZHk" firstAttribute="top" secondItem="sM2-1M-oFx" secondAttribute="top" constant="5" id="JZQ-j5-8Fm"/>
+                                <constraint firstAttribute="trailing" secondItem="4dO-4n-ZHk" secondAttribute="trailing" constant="5" id="oFm-Ms-Yqx"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="xhJ-jR-M9e"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="sM2-1M-oFx" firstAttribute="top" secondItem="bGs-OK-oU1" secondAttribute="top" constant="5" id="GJB-m4-WlQ"/>
+                        <constraint firstItem="sM2-1M-oFx" firstAttribute="leading" secondItem="xhJ-jR-M9e" secondAttribute="leading" constant="5" id="Qqv-JD-gCh"/>
+                        <constraint firstAttribute="trailing" secondItem="sM2-1M-oFx" secondAttribute="trailing" constant="5" id="Vji-Yu-ugE"/>
+                        <constraint firstItem="sM2-1M-oFx" firstAttribute="bottom" secondItem="xhJ-jR-M9e" secondAttribute="bottom" constant="5" id="ihq-Sf-elE"/>
+                    </constraints>
+                </view>
             </objects>
             <point key="canvasLocation" x="2704.347826086957" y="1630.5803571428571"/>
         </scene>
@@ -607,6 +643,9 @@
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
