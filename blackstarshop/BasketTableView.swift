@@ -10,14 +10,20 @@ import UIKit
 class BasketViewController: UIViewController, UIAlertViewDelegate {
     
     @IBOutlet weak var basketTableView: UITableView!
-    
     @IBOutlet weak var totalPrice: UILabel!
     
     override func viewWillAppear(_ animated: Bool) {
         ObjectRealm.allObject()
         basketTableView.reloadData()
-       totalPrice.text = String(summProduct)
-            }
+        totalSumm()
+    }
+    
+    func totalSumm() {
+        let summ: [String] = ObjectRealm.tovar.value(forKey: "priceProduct") as! [String]
+        let summDouble = summ.compactMap{ Double($0) }
+        let summAl = summDouble.reduce(0, +)
+        totalPrice.text = String(summAl)
+    }
     
     let ObjectRealm = FunctionRealmBase.functionRealmBase
     
@@ -52,6 +58,7 @@ extension BasketViewController: UITableViewDataSource, UITableViewDelegate {
             alertVC.addAction(UIAlertAction(title: "Да", style: .default, handler: { action in
                 self.ObjectRealm.deleteTovarRealmBase(index: indexPath.row)
                     tableView.reloadData()
+                self.totalSumm()
                         }))
             
             alertVC.addAction(UIAlertAction(title: "Нет", style: .default, handler: nil))

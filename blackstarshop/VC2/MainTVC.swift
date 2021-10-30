@@ -6,11 +6,9 @@
 //
 
 import UIKit
+import SwiftUI
 
 class MainTVC: UITableViewController {
-
-    @IBOutlet var noSubCategori: UIView!
-        @IBOutlet weak var noSubCategori2: UIView!
     
     var rootStruct: [RootStruct] = []
     
@@ -58,19 +56,14 @@ class MainTVC: UITableViewController {
         
         if categori.count != 0 {
             twotvc.subStruct = categori
-            navigationController?.pushViewController(twotvc, animated: true)
         } else {
-            addedNoSubCategoriView()
+            //при отсутствии подкатегории выходит соответствующий Label, сделано через backgraundview у TableView
+            let labelnotovar = UILabel(frame: self.view.frame)
+            labelnotovar.numberOfLines = 0
+            labelnotovar.textAlignment = .center
+            labelnotovar.text = "Извините, товарыотсутствуют"
+            twotvc.tableView.backgroundView = labelnotovar
         }
+        navigationController?.pushViewController(twotvc, animated: true)
     }
-    
-    func addedNoSubCategoriView() {
-        self.view.addSubview(noSubCategori)
-        noSubCategori.alpha = 0.8
-        self.noSubCategori.center.x = self.view.center.x
-        self.noSubCategori.center.y = self.view.center.y / 1.5
-    self.noSubCategori2.layer.cornerRadius = self.noSubCategori.frame.height / 2
-        UIView.animate(withDuration: 1.5) {
-        self.noSubCategori.alpha = 0
-    }}
 }

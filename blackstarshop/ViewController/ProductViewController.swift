@@ -114,16 +114,15 @@ extension ProductViewController: UITableViewDataSource {
 }
 
 extension ProductViewController: UITableViewDelegate {
-    
+    //функция добавления view о добавлении товара в корзину
     func addedView() {
-        self.view.addSubview(addedProductBasketView)
-    addedProductBasketView.alpha = 0.8
-        self.addedProductBasketView.center.x = self.view.center.x
+    self.view.addSubview(addedProductBasketView)
+    self.addedProductBasketView.alpha = 0.8
+    self.addedProductBasketView.center.x = self.view.center.x
     self.addedProductBasketView.center.y = self.view.center.y / 2
     self.addedProductBasketView2.layer.cornerRadius = self.addedProductBasketView2.frame.height / 2
-    UIView.animate(withDuration: 1) {
-        self.addedProductBasketView.alpha = 0
-       // self.view.willRemoveSubview(self.addedProductBasketView)
+    UIView.animate(withDuration: 2) {
+    self.addedProductBasketView.alpha = 0
                                     }
                     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
