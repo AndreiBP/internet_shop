@@ -61,7 +61,7 @@ class MainTVC: UITableViewController {
             let labelnotovar = UILabel(frame: self.view.frame)
             labelnotovar.numberOfLines = 0
             labelnotovar.textAlignment = .center
-            labelnotovar.text = "Извините, товарыотсутствуют"
+            labelnotovar.text = "Извините, товары отсутствуют"
             twotvc.tableView.backgroundView = labelnotovar
         }
         navigationController?.pushViewController(twotvc, animated: true)
